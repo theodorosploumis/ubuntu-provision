@@ -1,7 +1,6 @@
 ---
 - name: Purge openjdk*
   command: apt-get purge openjdk*
-    force: yes
   sudo: yes
 
 - name: Add java in system repositories
@@ -29,6 +28,6 @@
     dest: "/home/{{ username }}/setup/phpstorm"
 
 - name: install phpstorm
-  command: "cd /home/{{ username }}/setup/phpstorm/bin"
   command: "./phpstorm.sh"
+    chdir: "/home/{{ username }}/setup/phpstorm/bin"
   sudo: yes
