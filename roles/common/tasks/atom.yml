@@ -3,7 +3,6 @@
   apt_repository:
     repo: 'ppa:webupd8team/atom'
     state: present
-    update_cache: yes
   sudo: yes
 
 - name: install Atom editor
