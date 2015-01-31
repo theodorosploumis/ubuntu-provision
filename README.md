@@ -1,5 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/TheodorosPloumis/provisioning-local.png?label=ready&title=Ready)](https://waffle.io/TheodorosPloumis/provisioning-local)
-
 Provisioning My Ubuntu PC
 =========================
 A simple ansible script to set up my local Ubuntu machine.
