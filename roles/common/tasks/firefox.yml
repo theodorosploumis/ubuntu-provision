@@ -3,7 +3,6 @@
   apt_repository:
     repo: ppa:ubuntu-mozilla-daily/firefox-aurora
     state=present
-    update_cache: yes
   sudo: yes
 
 - name: Install Firefox development edition
