@@ -6,7 +6,7 @@ How To Install With One Command
 -------------------------------
 
 ```bash
-wget -qO- https://github.com/TheodorosPloumis/provisioning-local/raw/master/run.sh | sudo bash
+wget -qO- https://github.com/TheodorosPloumis/ubuntu-provision/raw/master/run.sh | sudo bash
 ```
 
 
