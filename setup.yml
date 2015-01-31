@@ -1,5 +1,7 @@
 - name: a playbook to setup my local machine with my basic customizations
   hosts: local
   connection: local
+  vars:
+    contents: "{{ lookup('file', 'roles/common/vars/main.yml') }}"
   roles:
     - common
