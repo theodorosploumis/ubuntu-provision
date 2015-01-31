@@ -5,7 +5,7 @@
 
 - name: Add java in system repositories
   apt_repository:
-    repo=ppa:webupd8team/java
+    repo="ppa:webupd8team/java"
     state=present
   sudo: yes
 
@@ -17,17 +17,20 @@
 
 - name: download phpstorm
   get_url:
-    url: http://download.jetbrains.com/webide/PhpStorm-EAP-139.1226.tar.gz
-    dest: /home/{{ username }}/setup/phpstorm.tar.gz
+    url: "http://download.jetbrains.com/webide/PhpStorm-EAP-139.1226.tar.gz"
+    dest: "/home/{{ username }}/setup/phpstorm.tar.gz"
     mode: 0440
 
 - name: extract phpstorm
   unarchive:
-    src: /home/{{ username }}/setup/phpstorm.tar.gz
-    dest: /home/{{ username }}/setup/phpstorm
+    src: "/home/{{ username }}/setup/phpstorm.tar.gz"
+    dest: "/home/{{ username }}/setup/phpstorm"
 
 - name: install phpstorm
-  command: cd /home/{{ username }}/setup/phpstorm/bin
-  command: ./phpstorm.sh
-    chdir: /home/{{ username }}/setup/phpstorm/bin
+  command: "cd /home/{{ username }}/setup/phpstorm/bin"
+  sudo: yes
+
+- name: Compile phpstorm  
+  command: "./phpstorm.sh"
+    chdir: "/home/{{ username }}/setup/phpstorm/bin"
   sudo: yes

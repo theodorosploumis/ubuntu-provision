@@ -1,7 +1,7 @@
 ---
 - name: Install LibreOffice software
   apt: 
-    name: {{item}}
+    name: {{ item }}
       with_items:
       - libreoffice-calc
       - libreoffice-writer

@@ -1,7 +1,7 @@
 ---
 - name: install numix theme - add numix ppa
   apt_repository:
-    repo: ppa:numix/ppa
+    repo: "ppa:numix/ppa"
     state: present
     update_cache: yes
   sudo: yes

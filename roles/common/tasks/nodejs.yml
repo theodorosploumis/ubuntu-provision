@@ -1,6 +1,6 @@
 ---
 - name: get currently installed node version
-  command: node --version
+  command: "node --version"
   sudo: yes
   register: result
   ignore_errors: True
@@ -8,7 +8,7 @@
 
 - name: checkout node
   git:
-    repo: git://github.com/joyent/node.git
+    repo: "git://github.com/joyent/node.git"
     dest: /setup/node
     force: no
     accept_hostkey: yes
@@ -18,7 +18,7 @@
 
 - name: configure
   sudo: yes
-  command: ./configure
+  command: "./configure"
   args:
     chdir: /setup/node
   when: result.rc !=0
@@ -33,7 +33,7 @@
   tags: nodejs
 
 - name: make install
-  command: make install
+  command: "make install"
   sudo: yes
   args:
     chdir: /setup/node

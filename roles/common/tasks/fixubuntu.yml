@@ -1,10 +1,10 @@
 ---
 - name: download fixubuntu
   get_url:
-    url: https://fixubuntu.com/fixubuntu.sh
-    dest: /home/{{ username }}/setup/fixubuntu.sh
+    url: "https://fixubuntu.com/fixubuntu.sh"
+    dest: "/home/{{ username }}/setup/fixubuntu.sh"
     mode: 0755
 
 - name: run fixubuntu
-  command: /home/{{ username }}/setup/fixubuntu.sh
+  command: "/home/{{ username }}/setup/fixubuntu.sh"
   sudo: yes

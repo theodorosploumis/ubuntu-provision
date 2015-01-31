@@ -1,7 +1,7 @@
 ---
 - name: Clone git-ftp from Github
   git:
-    repo: git://github.com/git-ftp/git-ftp.git
+    repo: "git://github.com/git-ftp/git-ftp.git"
     dest: /setup/git-ftp/
     force: no
     accept_hostkey: yes

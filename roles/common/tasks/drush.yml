@@ -1,10 +1,10 @@
 ---
 - name: Install composer
-  shell: curl -sS https://getcomposer.org/installer | php
+  shell: "curl -sS https://getcomposer.org/installer | php"
   sudo: yes
 
 - name: Move composer to /usr/local/bin/composer
-  shell: mv composer.phar /usr/local/bin/composer
+  shell: "mv composer.phar /usr/local/bin/composer"
   sudo: yes
 
 - name: Create composer symlink
@@ -16,11 +16,11 @@
 
 - name: Clone drush from github
   git:
-    repo: git://github.com/drush-ops/drush.git
+    repo: "git://github.com/drush-ops/drush.git"
     dest: /usr/local/src/drush
     force: yes
     accept_hostkey: yes
-    version={{ drush_version }}
+    version="{{ drush_version }}"
   when: result.rc !=0
   tags: drush
 
@@ -32,10 +32,10 @@
   sudo: yes
 
 - name: Compile Drush with Composer
-  shell: composer install
+  shell: "composer install"
   args:
     chdir: /usr/local/src/drush/drush
 
 - name: Check drush has been installed
-  command: drush --version
+  command: "drush --version"
 
