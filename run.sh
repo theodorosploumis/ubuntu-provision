@@ -1,6 +1,10 @@
 sudo apt-get install python-setuptools
 
-sudo easy_install pip
+# sudo easy_install pip
+# OR
+# sudo apt-get install python-pip
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
 
 sudo apt-get install aptitude
 sudo apt-get install git
