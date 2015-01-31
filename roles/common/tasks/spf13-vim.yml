@@ -5,15 +5,15 @@
 
 - name: vim - create symlink ~/.vimrc.local
   file:
-    src: "/home/{{ username }}/dotfiles/vim/.vimrc.local"
-    dest: "/home/{{ username }}/.vimrc.local"
+    src: /home/{{ username }}/dotfiles/vim/.vimrc.local
+    dest: /home/{{ username }}/.vimrc.local
     mode: 0755
     state: link
 
 - name: vim - create symlink .vimrc.bundles.local
   file:
-    src: "/home/{{ username }}/dotfiles/.vimrc.bundles.local"
-    dest: "/home/{{ username }}/.vimrc.bundles.local"
+    src: /home/{{ username }}/dotfiles/.vimrc.bundles.local
+    dest: /home/{{ username }}/.vimrc.bundles.local
     mode: 0755
     state: link
 

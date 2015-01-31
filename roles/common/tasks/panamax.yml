@@ -1,6 +1,6 @@
 ---
 - name: install Panamax (docker GUI) from official script
-  command: "curl http://download.panamax.io/installer/ubuntu.sh | bash"
+  command: curl http://download.panamax.io/installer/ubuntu.sh | bash
   sudo: yes
 
 

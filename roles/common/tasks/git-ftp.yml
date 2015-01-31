@@ -1,8 +1,8 @@
 ---
 - name: Clone git-ftp from Github
   git:
-    repo: "git://github.com/git-ftp/git-ftp.git"
-    dest: "/setup/git-ftp/"
+    repo: git://github.com/git-ftp/git-ftp.git
+    dest: /setup/git-ftp/
     force: no
     accept_hostkey: yes
   when: result.rc !=0
@@ -10,7 +10,7 @@
   sudo: no
 
 - name: Compile with make install
-  command: "make install"
+  command: make install
   sudo: yes
   args:
     chdir: /setup/git-ftp

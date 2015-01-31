@@ -1,8 +1,8 @@
 ---
 - name: Clone my dotfiles
   git:
-    repo: "git://github.com/theodorosploumis.com/dotfiles.git"
-    dest: "/home/{{ username }}/"
+    repo: git://github.com/theodorosploumis.com/dotfiles.git
+    dest: /home/{{ username }}/
     force: no
     accept_hostkey: yes
   when: result.rc !=0

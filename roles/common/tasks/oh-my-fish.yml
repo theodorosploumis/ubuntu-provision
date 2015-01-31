@@ -4,7 +4,7 @@
   sudo: yes
 
 - name: Set fish as the default shell 1
-  command: grep -q '^/usr/local/bin/fish$' /etc/shells
+  command: grep -q ^/usr/local/bin/fish$ /etc/shells
   sudo: yes
 
 - name: Set fish as the default shell 2
@@ -13,24 +13,24 @@
 
 - name: fish - make sure personal fish-tplcom.load file exists
   file:
-    path: "/home/{{ username }}/dotfiles/oh-my-fish/fish-tplcom.load"
+    path: /home/{{ username }}/dotfiles/oh-my-fish/fish-tplcom.load
     state: file
 
 - name: fish - create a symlink to my personal fish-tplcom.load file
   file:
-    src: "/home/{{ username }}/dotfiles/oh-my-fish/fish-tplcom.load"
-    dest: "/home/{{ username }}/.oh-my-fish/custom/fish-tplcom.load"
+    src: /home/{{ username }}/dotfiles/oh-my-fish/fish-tplcom.load
+    dest: /home/{{ username }}/.oh-my-fish/custom/fish-tplcom.load
     state: link
 
 - name: fish - make sure local fish configuration file exists
   file:
-    path: "/home/{{ username }}/dotfiles/oh-my-fish/config.fish"
+    path: /home/{{ username }}/dotfiles/oh-my-fish/config.fish
     state: file
 
 - name: fish - create a symlink to my local fish configuration
   file:
-    src: "/home/{{ username }}/dotfiles/oh-my-fish/config.fish"
-    dest: "/home/{{ username }}/.config/fish/config.fish"
+    src: /home/{{ username }}/dotfiles/oh-my-fish/config.fish
+    dest: /home/{{ username }}/.config/fish/config.fish
     state: link
 
 

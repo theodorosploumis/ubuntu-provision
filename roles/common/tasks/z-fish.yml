@@ -1,8 +1,8 @@
 ---
 - name: Clone z-fish from github
   git:
-    repo: "git://github.com/sjl/z-fish.git"
-    dest: "/home/{{ username }}/"
+    repo: git://github.com/sjl/z-fish.git
+    dest: /home/{{ username }}/
     force: no
     accept_hostkey: yes
   when: result.rc !=0

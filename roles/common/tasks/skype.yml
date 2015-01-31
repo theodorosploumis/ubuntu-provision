@@ -1,7 +1,7 @@
 ---
 - name: install Skype dependencies
   apt:
-    name: "sni-qt:i386"
+    name: sni-qt:i386
     update_cache: yes
   sudo: yes
 
@@ -11,7 +11,7 @@
 
 - name: add Skype to repositories
   apt_repository:
-    repo="deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+    repo=deb http://archive.canonical.com/ $(lsb_release -sc) partner
     state=present
     update_cache: yes
   sudo: yes

@@ -9,15 +9,15 @@
 
 - name: Create composer symlink
   file:
-    src: "/usr/local/bin/composer"
-    dest: "/usr/bin/composer"
+    src: /usr/local/bin/composer
+    dest: /usr/bin/composer
     state: link
   sudo: yes
 
 - name: Clone drush from github
   git:
-    repo: "git://github.com/drush-ops/drush.git"
-    dest: "/usr/local/src/drush"
+    repo: git://github.com/drush-ops/drush.git
+    dest: /usr/local/src/drush
     force: yes
     accept_hostkey: yes
     version={{ drush_version }}
@@ -26,13 +26,13 @@
 
 - name: Create Drush symlink
   file:
-    src: "/usr/local/src/drush/drush"
-    dest: "/usr/bin/drush"
+    src: /usr/local/src/drush/drush
+    dest: /usr/bin/drush
     state: link
   sudo: yes
 
 - name: Compile Drush with Composer
-  shell: "composer install"
+  shell: composer install
   args:
     chdir: /usr/local/src/drush/drush
 

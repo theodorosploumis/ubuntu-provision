@@ -13,13 +13,13 @@
   sudo: yes
 
 - name: remove default Atom settings (~/.atom)
-  command: "rm -rf /home/{{ username }}/.atom"
+  command: rm -rf /home/{{ username }}/.atom
   sudo: yes
 
 - name: create Atom symlinks to my configuration
   file:
-    src: "/home/{{ username }}/dotfiles/atom/"
-    dest: "/home/{{ username }}/.atom"
+    src: /home/{{ username }}/dotfiles/atom/
+    dest: /home/{{ username }}/.atom
     state: link
 
 

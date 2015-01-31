@@ -1,13 +1,12 @@
 ---
 - name: Purge openjdk*
   command: apt-get purge openjdk*
-    update_cache: yes
     force: yes
   sudo: yes
 
 - name: Add java in system repositories
   apt_repository:
-    repo='ppa:webupd8team/java'
+    repo=ppa:webupd8team/java
     state=present
     update_cache: yes
   sudo: yes
@@ -21,15 +20,15 @@
 - name: download phpstorm
   get_url:
     url: http://download.jetbrains.com/webide/PhpStorm-EAP-139.1226.tar.gz
-    dest: "/home/{{ username }}/setup/phpstorm.tar.gz"
+    dest: /home/{{ username }}/setup/phpstorm.tar.gz
     mode: 0440
 
 - name: extract phpstorm
   unarchive:
-    src: "/home/{{ username }}/setup/phpstorm.tar.gz"
-    dest: "/home/{{ username }}/setup/phpstorm"
+    src: /home/{{ username }}/setup/phpstorm.tar.gz
+    dest: /home/{{ username }}/setup/phpstorm
 
 - name: install phpstorm
-  command: "cd /home/{{ username }}/setup/phpstorm/bin"
-  command: "./phpstorm.sh"
+  command: cd /home/{{ username }}/setup/phpstorm/bin
+  command: ./phpstorm.sh
   sudo: yes

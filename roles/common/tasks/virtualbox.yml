@@ -1,12 +1,12 @@
 ---
 - name: download virtualbox .deb package
   get_url:
-    url: "{{ virtualbox_url }}"
-    dest: "/home/{{ username }}/setup/virtualbox.deb"
+    url: {{ virtualbox_url }}
+    dest: /home/{{ username }}/setup/virtualbox.deb
     mode: 0755
 
 - name: install virtualbox
   apt:
-    deb: "/home/{{ username }}/setup/virtualbox.deb"
+    deb: /home/{{ username }}/setup/virtualbox.deb
   sudo: yes
 
