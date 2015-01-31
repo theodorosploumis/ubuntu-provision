@@ -16,13 +16,8 @@ cd setup
 git clone https://github.com/TheodorosPloumis/ubuntu-provision.git
 cd ubuntu-provision
 
-sudo pip install -r requirements.txt
-
-sudo sed -i "s/^username: .*/username: $PROVISIONING_USER/" roles/common/vars/main.yml
-sudo sed -i "s/^github_username: .*/github_username: $PROVISIONING_GITHUB_USERNAME/" roles/common/vars/main.yml
-sudo sed -i "s/^uname_r: .*/uname_r: `uname -r`/" roles/common/vars/main.yml
+sudo pip install -r --allow-externals requirements.txt
 
 ansible-playbook setup.yml -i HOSTS --ask-sudo-pass  --module-path ./ansible_modules
 
-source ~/.bashrc
 exit 0
