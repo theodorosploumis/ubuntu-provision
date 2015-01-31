@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 [![Stories in Ready](https://badge.waffle.io/TheodorosPloumis/provisioning-local.png?label=ready&title=Ready)](https://waffle.io/TheodorosPloumis/provisioning-local)
+
 Provisioning My Ubuntu PC
 =========================
-
-A simple ansible script to set up my machine just the way I like it.
+A simple ansible script to set up my local Ubuntu machine.
 
 How To Install With One Command
 -------------------------------
@@ -56,18 +55,3 @@ How To Install The Old Fashioned Way
   ```bash
   ansible-playbook setup.yml -i HOSTS --ask-sudo-pass
   ```
-
-Possible Issues
----------------
-
-1. /usr/bin/ohai does not exist (Haven't hit since early development)
-
-The fix was to remove old version of ruby, use rvm and then gem install ohai
-
-http://stackoverflow.com/questions/4464985/rails-3-ruby-1-9-2-does-it-need-usr-bin-ruby1-8
-https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-precise-pangolin-with-rvm
-https://wiki.opscode.com/display/chef/Ohai+Installation+and+Use
-=======
-# My Ubuntu provision
-Ansible script for local Ubuntu provisioning.
->>>>>>> 1fcc22dc3ea8c4543bf02ac39f38225a13a733e6
