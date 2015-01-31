@@ -1,6 +1,6 @@
 ---
 - name: Purge openjdk*
-    command: purge openjdk*
+command: apt-get purge openjdk*
     update_cache: yes
     force: yes
   sudo: yes
