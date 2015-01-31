@@ -1,0 +1,6 @@
+---
+- name: install filezilla
+  apt:
+    name: filezilla
+    update_cache: yes
+  sudo: yes

@@ -1,0 +1,54 @@
+---
+- name: Install spf-13 vim
+  command: ""
+    name: vim
+    update_cache: yes
+  sudo: yes
+
+- name: horse vim - make sure bundle directory exists
+  file:
+    path: "/home/{{ username }}/.vim/bundle"
+    state: directory
+    mode: 0777
+  sudo: yes
+
+- name: horse vim - checkout vundle repo
+  git:
+    repo: https://github.com/gmarik/vundle.vim.git
+    dest: "/home/{{ username }}/.vim/bundle/vundle"
+
+- name: horse vim - checkout repo
+  git:
+    repo: https://github.com/JBKahn/horse.vim.git
+    dest: "/home/{{ username }}/horse.vim"
+
+- name: horse vim - copy .vimrc file
+  file:
+    src: "/home/{{ username }}/horse.vim/.vimrc"
+    dest: "/home/{{ username }}/.vimrc"
+    mode: 0755
+    state: link
+
+- name: horse vim - copy .vimrc.bundles file
+  file:
+    src: "/home/{{ username }}/horse.vim/.vimrc.bundles"
+    dest: "/home/{{ username }}/.vimrc.bundles"
+    mode: 0755
+    state: link
+
+- name: horse vim - make sure vim colors directory exists
+  file:
+    path: "/home/{{ username }}/.vim/colors"
+    state: directory
+    mode: 0777
+  sudo: yes
+
+- name: horse vim - copy color to config to avoid error
+  copy:
+    src: base16-monokai.vim
+    dest: "/home/{{ username }}/.vim/colors/base16-monokai.vim"
+    mode: 0755
+
+- name: horse vim - run bundle install
+  command: vim +BundleInstall +qall
+

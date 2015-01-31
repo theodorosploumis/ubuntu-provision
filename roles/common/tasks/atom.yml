@@ -1,0 +1,26 @@
+---
+- name: install Atom editor - add atom ppa
+  apt_repository:
+    repo: 'ppa:webupd8team/atom'
+    state: present
+    update_cache: yes
+  sudo: yes
+
+- name: install Atom editor
+  apt:
+    name: atom
+    update_cache: yes
+  sudo: yes
+
+- name: remove default Atom settings (~/.atom)
+  command: "rm -rf /home/{{ username }}/.atom"
+  sudo: yes
+
+- name: create Atom symlinks to my configuration
+  file:
+    src: "/home/{{ username }}/dotfiles/atom/"
+    dest: "/home/{{ username }}/.atom"
+    state: link
+
+
+

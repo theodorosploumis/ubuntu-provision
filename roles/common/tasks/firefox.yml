@@ -1,0 +1,14 @@
+---
+- name: Add mozilla firefox development edition on repositories
+  apt_repository:
+    repo: 'ppa:ubuntu-mozilla-daily/firefox-aurora'
+    state=present
+    update_cache: yes
+  sudo: yes
+
+- name: Install Firefox development edition
+  apt:
+    name: firefox
+    update_cache: yes
+    force: yes
+  sudo: yes

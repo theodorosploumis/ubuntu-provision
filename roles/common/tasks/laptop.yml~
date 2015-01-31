@@ -1,0 +1,15 @@
+---
+- name: screen dimming - alter grub file
+  lineinfile:
+    dest: /etc/default/grub
+    regexp: "^GRUB_CMDLINE_LINUX_DEFAULT="
+    line: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video.use_native_backlight=1"'
+  sudo: yes
+  register: grubfile
+  tags: sager
+
+- name: screen dimming - update grub
+  command: sudo update-grub
+  sudo: yes
+  when: grubfile|changed
+  tags: sager

@@ -1,0 +1,25 @@
+---
+- name: install Skype dependencies
+  apt:
+    name: "sni-qt:i386"
+    update_cache: yes
+  sudo: yes
+
+- name: enable MultiArch (for Ubuntu 64x)
+    command: dpkg --add-architecture i386
+  sudo: yes
+
+- name: add Skype to repositories
+  apt_repository:
+    repo="deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+    state=present
+    update_cache: yes
+  sudo: yes
+
+- name: install Skype etc
+  action: apt pkg={{item}} state=installed
+   with_items:
+   - skype
+   - gdebi
+  sudo: yes
+

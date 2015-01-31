@@ -1,0 +1,55 @@
+---
+- name: get currently installed node version
+  command: "node --version"
+  sudo: yes
+  register: result
+  ignore_errors: True
+  tags: nodejs
+
+- name: checkout node
+  git:
+    repo: "git://github.com/joyent/node.git"
+    dest: "/setup/node"
+    force: no
+    accept_hostkey: yes
+  when: result.rc !=0
+  tags: nodejs
+  sudo: yes
+
+- name: configure
+  sudo: yes
+  command: "./configure"
+  args:
+    chdir: /setup/node
+  when: result.rc !=0
+  tags: nodejs
+
+- name: make
+  command: "make"
+  sudo: yes
+  args:
+    chdir: /setup/node
+  when: result.rc !=0
+  tags: nodejs
+
+- name: make install
+  command: "make install"
+  sudo: yes
+  args:
+    chdir: /setup/node
+  when: result.rc !=0
+  tags: nodejs
+
+- name: install global nodejs packages
+  npm:
+    name: "{{ item.name }}"
+    state: present
+    global: yes
+    version: "{{ item.version|default('') }}"
+  with_items:
+    - {name: 'bower'}
+    - {name: 'grunt-cli'}
+    - {name: 'yo'}
+    - {name: 'browsersync'}
+  sudo: yes
+

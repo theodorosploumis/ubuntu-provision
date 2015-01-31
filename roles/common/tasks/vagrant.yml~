@@ -1,0 +1,28 @@
+---
+- name: download vagrant .deb package
+  get_url:
+    url: "{{ vagrant_url }}"
+    dest: "/home/{{ username }}/setup/vagrant.deb"
+    mode: 0755
+
+- name: get currently installed vagrant version
+  command: "vagrant --version"
+  sudo: yes
+  register: result
+  ignore_errors: True
+
+- name: install vagrant
+  apt:
+    deb: "/home/{{ username }}/setup/vagrant.deb"
+  sudo: yes
+  when: result.rc !=0 or result.stderr.find('A later version is already installed') != -1
+
+- name: install vagrant plugins
+  command: "vagrant plugin install {{ item }}"
+  with_items:
+   - vagrant-cachier
+   - vagrant-gatling-rsync
+   - vagrant-share
+   - vagrant-triggers
+   - vagrant-vbguest
+

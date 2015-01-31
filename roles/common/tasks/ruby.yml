@@ -1,0 +1,59 @@
+---
+- name: install scm-breeze - checkout repo
+  git:
+    repo: https://github.com/ndbroadbent/scm_breeze.git
+    dest: "/home/{{ username }}/setup/scm_breeze"
+
+- name: install scm-breeze - run script
+  command: "/home/{{ username }}/setup/scm_breeze/install.sh"
+
+- name: remove ruby
+  apt:
+    name: ruby
+    state: absent
+  sudo: yes
+  tags: rub
+
+- name: download rvm installer
+  get_url:
+    url: https://get.rvm.io
+    dest: "/home/{{ username }}/setup/rvm-install.sh"
+  sudo: yes
+  tags: ruby
+
+- name: add rvm key
+  shell: gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  sudo: yes
+
+- name: install rvm with ruby
+  command: "bash /home/{{ username }}/setup/rvm-install.sh stable --ruby"
+  sudo: yes
+  tags: ruby
+
+- name: remove troublesome rvm line from .bashrc
+  lineinfile:
+    dest: "/home/{{ username }}/.bashrc"
+    state: absent
+    regexp: '"$PATH:$HOME/.rvm/bin"'
+
+- name: remove troublesome scm_breeze line from .bashrc
+  lineinfile:
+    dest: "/home/{{ username }}/.bashrc"
+    state: absent
+    regexp: '"/home/joseph/.scm_breeze/scm_breeze.sh"'
+
+- name: add rvm line to profile
+  lineinfile:
+    dest: "/home/{{ username }}/.vimrc"
+    state: present
+    line: '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*'
+
+- name: Install sass gem
+  shell: /usr/local/rvm/bin/rvm all do gem install {{ item }}
+  with_items:
+    - capistrano
+    - sass
+    - boostrap-sass
+    - compass
+  sudo: yes
+

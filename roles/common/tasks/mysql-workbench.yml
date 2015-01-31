@@ -1,0 +1,6 @@
+---
+- name: install mysql-workbench
+  apt:
+    name: mysql-workbench
+    update_cache: yes
+  sudo: yes

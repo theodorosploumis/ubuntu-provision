@@ -1,0 +1,6 @@
+---
+- name: install 7zip
+  apt:
+    name: p7zip-full
+    update_cache: yes
+  sudo: yes
