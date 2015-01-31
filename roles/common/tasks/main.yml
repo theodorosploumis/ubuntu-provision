@@ -6,7 +6,7 @@
 # IDE, editors
   - include: oh-my-fish.yml
   - include: z-fish.yml
-  - include: spf-13-vim.yml
+  - include: spf13-vim.yml
   - include: atom.yml
   - include: phpstorm.yml
 

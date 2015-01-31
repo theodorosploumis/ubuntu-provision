@@ -1,6 +1,0 @@
----
-- name: install docker with script
-  command: "curl -sSL https://get.docker.com/ubuntu/ | sudo sh"
-  sudo: yes
-
-
