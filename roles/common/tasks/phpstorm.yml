@@ -1,7 +1,6 @@
 ---
 - name: Purge openjdk*
   command: apt-get purge openjdk*
-    force: yes
   sudo: yes
 
 - name: Add java in system repositories
