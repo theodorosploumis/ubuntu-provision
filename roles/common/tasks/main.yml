@@ -40,7 +40,7 @@
 
 # Node + Ruby and their packages
   - include: nodejs.yml
-  - include: ruby_gems.yml
+  - include: ruby.yml
 
 
 
