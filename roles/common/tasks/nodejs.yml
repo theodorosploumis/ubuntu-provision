@@ -42,14 +42,14 @@
 
 - name: install global nodejs packages
   npm:
-    name: {{ item.name }}
+    name: "{{ item.name }}"
     state: present
     global: yes
-    version: {{ item.version|default() }}
+    version: "{{ item.version|default() }}"
   with_items:
-    - {name: bower}
-    - {name: grunt-cli}
-    - {name: yo}
-    - {name: browsersync}
+    - "{name: bower}"
+    - "{name: grunt-cli}"
+    - "{name: yo}"
+    - "{name: browsersync}"
   sudo: yes
 
