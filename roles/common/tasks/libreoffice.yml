@@ -1,10 +1,7 @@
 ---
 - name: Install LibreOffice software
   apt: 
-    name: {{ item }}
-      with_items:
-      - libreoffice-calc
-      - libreoffice-writer
+    name: "libreoffice-calc libreoffice-writer"
     update_cache: yes
   sudo: yes
 
