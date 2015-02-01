@@ -32,5 +32,6 @@
 
 - name: Compile phpstorm  
   command: "./phpstorm.sh"
+  args:
     chdir: "/home/{{ username }}/setup/phpstorm/bin"
   sudo: yes
