@@ -2,7 +2,7 @@
 - name: Clone my dotfiles
   git:
     repo: "git://github.com/theodorosploumis/dotfiles.git"
-    dest: "/home/{{ username }}/"
+    dest: "/home/{{ username }}/dotfiles"
     force: yes
     accept_hostkey: yes
   tags: dotfiles
