@@ -3,7 +3,6 @@
   git:
     repo: "git://github.com/theodorosploumis.com/dotfiles.git"
     dest: "/home/{{ username }}/"
-    force: no
+    force: yes
     accept_hostkey: yes
-  when: result.rc !=0
   tags: dotfiles
