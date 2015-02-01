@@ -18,10 +18,9 @@
   git:
     repo: "git://github.com/drush-ops/drush.git"
     dest: /usr/local/src/drush
+    version: "{{ drush_version }}"
     force: yes
     accept_hostkey: yes
-    version="{{ drush_version }}"
-  when: result.rc !=0
   tags: drush
 
 - name: Create Drush symlink
