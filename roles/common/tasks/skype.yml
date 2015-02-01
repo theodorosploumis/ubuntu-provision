@@ -6,7 +6,7 @@
   sudo: yes
 
 - name: enable MultiArch if installing on Ubuntu 64x
-    command: "dpkg --add-architecture i386"
+  shell: "dpkg --add-architecture i386"
   sudo: yes
 
 - name: add Skype to repositories
