@@ -7,6 +7,6 @@
   sudo: yes
 
 - name: install Panamax running script
-  shell: "/bin/sh /home/{{ username }}/setup/docker.sh"
+  shell: "/home/{{ username }}/setup/docker.sh"
   sudo: yes
 
