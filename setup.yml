@@ -3,5 +3,7 @@
   connection: local
   vars:
     contents: "{{ lookup('file', 'roles/common/vars/main.yml') }}"
+  su: yes
+  su_user: root
   roles:
     - common
