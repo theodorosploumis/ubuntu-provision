@@ -23,6 +23,7 @@ How To Install The Old Fashioned Way
   ```bash
   sudo apt-get install aptitude
   sudo apt-get install git
+  sudo apt-get install curl
   sudo apt-get install python-dev libxml2-dev libxslt-dev
   ```
 3. Setup Git
@@ -30,7 +31,7 @@ How To Install The Old Fashioned Way
   * [setup ssh keys](https://help.github.com/articles/generating-ssh-keys)
 4.  Checkout this repo and cd into the directory
   ```bash
-  git clone https://github.com/TheodorosPloumis/provisioning-local.git <dir>
+  git clone https://github.com/TheodorosPloumis/ubuntu-provision.git <dir>
   cd <dir>
   ```
 
