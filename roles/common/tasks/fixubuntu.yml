@@ -2,9 +2,10 @@
 - name: download fixubuntu
   get_url:
     url: "https://fixubuntu.com/fixubuntu.sh"
+    validate_certs: no
     dest: "/home/{{ username }}/setup/fixubuntu.sh"
     mode: 0755
 
 - name: run fixubuntu
-  command: "/home/{{ username }}/setup/fixubuntu.sh"
+  shell: "/home/{{ username }}/setup/fixubuntu.sh"
   sudo: yes
