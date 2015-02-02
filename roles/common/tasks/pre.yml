@@ -4,6 +4,6 @@
     path: "/home/{{ username }}/setup"
     state: directory
     mode: 0755
-    owner: {{ username }}
-    group: {{ username }}
+    owner: "{{ username }}"
+    group: "{{ username }}"
 
