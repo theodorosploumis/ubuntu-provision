@@ -9,7 +9,7 @@
     dest: "/home/{{ username }}/setup/spf13-vim"
     owner: "{{ username }}"
     group: "{{ username }}"
-    mode: 777
+    mode: 0755
 
 - name: Install vim
   shell: "/home/{{ username }}/setup/spf13-vim"
