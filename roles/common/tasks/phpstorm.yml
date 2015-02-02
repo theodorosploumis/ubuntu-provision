@@ -17,7 +17,7 @@
 
 - name: download phpstorm
   get_url:
-    url: "http://download.jetbrains.com/webide/PhpStorm-EAP-139.1226.tar.gz"
+    url: "{{ phpstorm_url }}"
     dest: "/home/{{ username }}/setup/phpstorm.tar.gz"
     mode: 0440
 
