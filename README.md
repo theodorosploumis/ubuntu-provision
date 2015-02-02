@@ -44,10 +44,11 @@ How To Install The Old Fashioned Way
   | variable  | Description  |
   | :------------ |:---------------|
   | username    | username of user you wish to provision for |
-  | sager_laptop     | boolean to fix keyboard colors and backlight on ubuntu for sager laptops |
+  | phpstorm_url | URL to PHPStorm package |
   | vagrant_url | URL to vagrant .deb file you wish to install |
   | virtualbox_url |URL to virtual_box .deb file you wish to install |
   | github_username | github username |
+
 7. Provision your local machine
 
   ```bash
