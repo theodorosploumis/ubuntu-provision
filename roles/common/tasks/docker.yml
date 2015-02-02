@@ -1,6 +1,12 @@
 ---
-- name: install docker from official script
-  command: curl -sSL https://get.docker.com/ubuntu/ | sudo sh
+- name: Download Docker (linux container)
+  get_url:
+    url: "https://get.docker.com/ubuntu/"
+    validate_certs: no
+    dest: "/home/{{ username }}/setup/docker.sh"
   sudo: yes
 
+- name: install Panamax running script
+  shell: "bin/sh /home/{{ username }}/setup/docker.sh"
+  sudo: yes
 
