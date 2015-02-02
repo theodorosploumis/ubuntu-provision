@@ -6,5 +6,5 @@
   sudo: yes
 
 - name: install Panamax running script
-  shell: "bin/sh /home/{{ username }}/setup/panamax.sh"
+  shell: "/home/{{ username }}/setup/panamax.sh"
   sudo: yes
