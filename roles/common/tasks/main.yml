@@ -1,7 +1,4 @@
 ---
-# Run sudo commands as root
-  - shell: root
-  
 # Reguirements
   - include: pre.yml
   - include: dotfiles.yml
