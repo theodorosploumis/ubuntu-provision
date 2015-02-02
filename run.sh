@@ -8,6 +8,7 @@ sudo python get-pip.py
 
 sudo apt-get install aptitude
 sudo apt-get install git
+sudo apt-get install curl
 sudo apt-get install python-dev libxml2-dev libxslt-dev
 
 cd ~
