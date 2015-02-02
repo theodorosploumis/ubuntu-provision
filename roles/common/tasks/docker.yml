@@ -6,7 +6,7 @@
     dest: "/home/{{ username }}/setup/docker.sh"
   sudo: yes
 
-- name: install Panamax running script
+- name: install Docker from script
   shell: "/home/{{ username }}/setup/docker.sh"
   sudo: yes
 
