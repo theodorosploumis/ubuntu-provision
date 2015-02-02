@@ -1,8 +1,14 @@
 ---
 - name: Install oh-my-fish
-  shell: "curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish"
+  get_url: 
+    url: "https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish"
+    dest: "/home/{{ username }}/setup/install.fish"
   sudo: yes
 
+- name: Run fish installer
+  shell: "bin/sh /home/{{ username }}/setup/install.fish"
+  sudo: yes 
+  
 - name: Set fish as the default shell 1
   command: "grep -q ^/usr/local/bin/fish$ /etc/shells"
   sudo: yes
