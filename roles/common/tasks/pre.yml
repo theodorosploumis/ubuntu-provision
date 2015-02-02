@@ -5,9 +5,3 @@
     state: directory
     mode: 0755
 
-- name: Make sure git is installed
-  apt:
-    name: git
-    update_cache: yes
-  sudo: yes
-
