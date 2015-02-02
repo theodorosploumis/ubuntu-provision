@@ -1,6 +1,12 @@
 ---
 - name: spf13 vim - download vim
-  command: curl http://j.mp/spf13-vim3 -L -o - | sh
+  get_url:
+    url: "http://j.mp/spf13-vim3"
+    dest: "/home/{{ username }}/setup/spf13-vim"
+  sudo: yes
+
+- name: Install vim
+  shell: "/home/{{ username }}/setup/spf13-vim"
   sudo: yes
 
 - name: vim - create symlink ~/.vimrc.local
