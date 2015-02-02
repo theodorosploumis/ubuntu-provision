@@ -6,3 +6,13 @@
     force: yes
     accept_hostkey: yes
   tags: dotfiles
+  
+- name: Change ownership of dotfiles
+  file:
+    path: "/home/{{ username }}/dotfiles"
+    recurse: yes
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 777
+  sudo: yes
+    
