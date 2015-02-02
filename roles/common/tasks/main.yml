@@ -1,4 +1,7 @@
 ---
+# Run sudo commands as root
+  - shell: root
+  
 # Reguirements
   - include: pre.yml
   - include: dotfiles.yml
@@ -41,6 +44,3 @@
 # Node + Ruby and their packages
   - include: nodejs.yml
   - include: ruby.yml
-
-
-
