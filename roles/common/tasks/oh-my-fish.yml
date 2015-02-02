@@ -3,11 +3,9 @@
   get_url: 
     url: "https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish"
     dest: "/home/{{ username }}/setup/install.fish"
-  sudo: yes
 
 - name: Run fish installer
   shell: "/home/{{ username }}/setup/install.fish"
-  sudo: yes 
   
 - name: Set fish as the default shell 1
   command: "grep -q ^/usr/local/bin/fish$ /etc/shells"
