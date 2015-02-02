@@ -4,8 +4,16 @@
     url: "http://j.mp/spf13-vim3"
     dest: "/home/{{ username }}/setup/spf13-vim"
 
+- name: spf13 vim - change ownership
+  file:
+    dest: "/home/{{ username }}/setup/spf13-vim"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 777
+
 - name: Install vim
   shell: "/home/{{ username }}/setup/spf13-vim"
+  sudo: yes
 
 - name: vim - create symlink ~/.vimrc.local
   file:
