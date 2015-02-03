@@ -39,7 +39,7 @@
 #  - include: drush.yml
 
 # Node + Ruby and their packages
-  - include: nodejs.yml
+#  - include: nodejs.yml
   - include: ruby.yml
 
 # Remove unused software
