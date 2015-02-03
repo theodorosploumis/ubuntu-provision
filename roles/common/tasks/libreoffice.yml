@@ -1,7 +1,0 @@
----
-- name: Install LibreOffice software
-  apt: 
-    name: "libreoffice-calc libreoffice-writer"
-    update_cache: yes
-  sudo: yes
-
