@@ -5,6 +5,14 @@
     dest: "/home/{{ username }}/setup/linux_signing_key.pub"
     mode: 0440
 
+- name: Change permissions for linux_signing_key.pub
+  file:
+    path: "/home/{{ username }}/setup/linux_signing_key.pub"
+    user: "{{ username }}"
+    mode: 0755
+    group: "{{ username }}"
+  sudo: yes
+
 - name: install chrome stable - add linux_signing_key.pub to keys
   authorized_key:
     user: "{{ username }}"
