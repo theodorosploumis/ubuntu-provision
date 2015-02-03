@@ -12,7 +12,6 @@
 
 - name: Set fish as the default shell 1
   shell: "chsh {{ username }} -s /usr/bin/fish"
-  sudo: yes
 
 - name: Set fish as the default shell 2
   shell: "grep ^/usr/bin/fish /etc/shells -q"
