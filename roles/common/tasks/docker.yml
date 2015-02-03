@@ -7,6 +7,6 @@
   sudo: yes
 
 - name: install Docker from script
-  shell: "/home/{{ username }}/setup/docker.sh"
+  shell: "sh /home/{{ username }}/setup/docker.sh"
   sudo: yes
 
