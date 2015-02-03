@@ -1,6 +1,9 @@
 ---
 - name: uninstall software
-  command: "apt-get remove --purge {{ item }}"
+  apt: 
+    name: "{{ item }}"
+    purge: yes
+    force: yes
   with_items:
     - thunderbird
     - rhythmbox
