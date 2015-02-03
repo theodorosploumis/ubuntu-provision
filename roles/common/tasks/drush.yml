@@ -42,6 +42,16 @@
   args:
     chdir: "/usr/local/src/drush"
 
-- name: Check drush has been installed
-  command: "drush --version"
-
+- name: Change ~/.drush folder permissions
+  file:
+    path: "/home/{{ username }}/.drush"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    recurse: yes
+    state: directory
+  sudo: yes
+  
+- name: Install usefull drush modules
+  command: "drush dl registry_rebuild site_audit drupalgeddon"
+  
