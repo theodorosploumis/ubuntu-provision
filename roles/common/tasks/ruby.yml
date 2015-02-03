@@ -1,60 +1,37 @@
 ---
+- name: install Ruby
+  apt:
+    name: ruby
+    update_cache: yes
+  sudo: yes
+  
 - name: install scm-breeze - checkout repo
   git:
-    repo: https://github.com/ndbroadbent/scm_breeze.git
+    repo: "git://github.com/ndbroadbent/scm_breeze.git"
     dest: "/home/{{ username }}/setup/scm_breeze"
 
 - name: install scm-breeze - run script
   shell: "/home/{{ username }}/setup/scm_breeze/install.sh"
   sudo: yes
 
-- name: remove ruby
-  apt:
-    name: ruby
-    state: absent
-  sudo: yes
-  tags: rub
-
-- name: Create /opt/ruby folder
+- name: Create /opt/rubygems folder
   file:
-    path: "/opt/ruby"
+    path: "/opt/rubygems"
     state: directory
   sudo: yes
-  tags: ruby
-  
-- name: download rvm installer
-  get_url:
-    url: "https://get.rvm.io"
-    dest: "/opt/ruby/rvm-install.sh"
-  sudo: yes
-  tags: ruby
 
-- name: add rvm key
-  shell: "gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3"
+- name: Clone Rubygems
+  git:
+    repo: "git://github.com/rubygems/rubygems"
+    dest: "/opt/rubygems"
+    version: "{{ rubygems_vesrion }}"
   sudo: yes
 
-- name: install rvm with ruby
-  command: "bash /opt/ruby/rvm-install.sh stable --ruby"
+- name: Compile Rubygems
+  command: "ruby setup.rb"
+  args:
+    chdir: "/opt/rubygems"
   sudo: yes
-  tags: ruby
-
-- name: remove troublesome rvm line from .bashrc
-  lineinfile:
-    dest: "/home/{{ username }}/.bashrc"
-    state: absent
-    regexp: "$PATH:$HOME/.rvm/bin"
-
-- name: remove troublesome scm_breeze line from .bashrc
-  lineinfile:
-    dest: "/home/{{ username }}/.bashrc"
-    state: absent
-    regexp: "/home/{{ username }}/.scm_breeze/scm_breeze.sh"
-
-- name: add rvm line to profile
-  lineinfile:
-    dest: "/home/{{ username }}/.vimrc"
-    state: present
-    line: "[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm # Load RVM into a shell session *as a function*"
 
 - name: Install sass gem
   shell: "/usr/local/rvm/bin/rvm all do gem install {{ item }}"
