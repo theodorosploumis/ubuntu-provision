@@ -1,4 +1,10 @@
 ---
+-name: Install vim editor
+ apt:
+    name: vim
+    update_cache: yes
+  sudo: yes
+
 - name: spf13 vim - download vim
   get_url:
     url: "http://j.mp/spf13-vim3"
