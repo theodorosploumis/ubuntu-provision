@@ -1,7 +1,6 @@
 ---
 - name: uninstall software
-  apt:
-    name: "{{ item }}"
+  command: "apt-get remove --purge {{ item }}"
   with_items:
     - thunderbird
     - rhythmbox
@@ -20,8 +19,4 @@
     - bittorrent
     - evolution-data-server-online-accounts
     - landscape-client-ui-install
-  update_cache: yes
-  state: absent
-  purge: yes
-  force: yes
   sudo: yes
