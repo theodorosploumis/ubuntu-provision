@@ -1,21 +1,4 @@
-- name: Purge openjdk*
-  command: apt-get purge openjdk*
-  sudo: yes
-
-- name: Add java in system repositories
-  apt_repository:
-    repo="ppa:webupd8team/java"
-    state=present
-  sudo: yes
-
-- name: Install java
-  apt:
-    name: oracle-java7-installer
-    force: yes
-  sudo: yes
-  
 ---
-
 - name: download phpstorm
   get_url:
     url: "{{ phpstorm_url }}"
