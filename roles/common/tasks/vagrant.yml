@@ -3,6 +3,7 @@
   get_url:
     url: "{{ vagrant_url }}"
     dest: "/home/{{ username }}/setup/vagrant.deb"
+    validate_certs: no
     mode: 0755
 
 - name: install vagrant
