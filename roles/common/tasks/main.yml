@@ -1,46 +1,47 @@
 ---
 # Reguirements
-#  - include: pre.yml
-#  - include: dotfiles.yml
+  - include: pre.yml
+  - include: dotfiles.yml
+  - include: java.yml
 
 # IDE, editors
-# - include: oh-my-fish.yml
-# - include: z-fish.yml
-# - include: spf13-vim.yml
-# - include: atom.yml
-# - include: phpstorm.yml
+ - include: oh-my-fish.yml
+ - include: z-fish.yml
+ - include: spf13-vim.yml
+ - include: atom.yml
+ - include: phpstorm.yml
 
 # Browsers
-#  - include: chrome.yml
-#  - include: firefox.yml
+  - include: chrome.yml
+  - include: firefox.yml
 
 # System
-#  - include: fixubuntu.yml
-#  - include: numix.yml
-#  - include: plank.yml
-#  - include: fonts.yml
+  - include: fixubuntu.yml
+  - include: numix.yml
+  - include: plank.yml
+  - include: fonts.yml
 
 # Utilities
-#  - include: keepass2.yml
-#  - include: skype.yml
-#  - include: filezilla.yml
-#  - include: vlc.yml
-#  - include: 7zip.yml
-#  - include: deja-dup.yml
-#  - include: mysql-workbench.yml
+  - include: keepass2.yml
+  - include: skype.yml
+  - include: filezilla.yml
+  - include: vlc.yml
+  - include: 7zip.yml
+  - include: deja-dup.yml
+  - include: mysql-workbench.yml
 
 # DevOps
-#  - include: virtualbox.yml
-#  - include: vagrant.yml
-#  - include: docker.yml
-#  - include: panamax.yml
-#  - include: git-ftp.yml
-#  - include: php.yml
-#  - include: drush.yml
+  - include: virtualbox.yml
+  - include: vagrant.yml
+  - include: docker.yml
+  - include: panamax.yml
+  - include: git-ftp.yml
+  - include: php.yml
+  - include: drush.yml
 
 # Node + Ruby and their packages
-#  - include: nodejs.yml
+  - include: nodejs.yml
   - include: ruby.yml
 
 # Remove unused software
-#  - include: uninstall.yml
+  - include: uninstall.yml
