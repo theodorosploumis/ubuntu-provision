@@ -8,7 +8,7 @@
 # - include: z-fish.yml
 # - include: spf13-vim.yml
 # - include: atom.yml
-  - include: phpstorm.yml
+# - include: phpstorm.yml
 
 # Browsers
   - include: chrome.yml
