@@ -1,6 +1,6 @@
 ---
 - name: Install PHP5 and Apache2
-  command: "apt-get remove --purge {{ item }}"
+  command: "apt-get install {{ item }}"
   with_items:
     - php5
     - libapache2-mod-php5
