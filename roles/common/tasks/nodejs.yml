@@ -45,7 +45,6 @@
     name: "{{ item.name }}"
     state: present
     global: yes
-    version: "{{ item.version|default() }}"
   with_items:
     - "{name: bower}"
     - "{name: grunt-cli}"
