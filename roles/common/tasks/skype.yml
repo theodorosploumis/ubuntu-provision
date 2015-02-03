@@ -5,19 +5,23 @@
     update_cache: yes
   sudo: yes
 
+- name: install gdebi
+  apt:
+    name: gdebi
+    update_cache: yes
+  sudo: yes
+
 - name: enable MultiArch if installing on Ubuntu 64x
   shell: "dpkg --add-architecture i386"
   sudo: yes
 
-- name: add Skype to repositories
-  apt_repository:
-    repo: "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
-    state: present
-    update_cache: yes
+- name: Download Skype
+  get_url:
+    url: "http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb"
+    dest: "/home/{{ username }}/setup"
   sudo: yes
 
 - name: install Skype
-  apt:
-    name: skype
-    update_cache: yes
+  command: "gdebi skype-ubuntu-precise_4.3.0.37-1_i386.deb"
+    chdir: "/home/{{ username }}/setup"
   sudo: yes
