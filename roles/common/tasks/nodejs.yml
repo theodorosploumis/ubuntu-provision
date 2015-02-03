@@ -16,6 +16,7 @@
     dest: "/opt/node"
     force: no
     accept_hostkey: yes
+    version: "{{ node_version }}"
   tags: nodejs
   sudo: yes
 
