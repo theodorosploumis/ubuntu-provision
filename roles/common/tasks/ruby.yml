@@ -48,7 +48,7 @@
   lineinfile:
     dest: "/home/{{ username }}/.bashrc"
     state: absent
-    regexp: "/home/joseph/.scm_breeze/scm_breeze.sh"
+    regexp: "/home/{{ username }}/.scm_breeze/scm_breeze.sh"
 
 - name: add rvm line to profile
   lineinfile:
