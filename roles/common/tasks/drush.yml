@@ -40,7 +40,7 @@
 - name: Compile Drush with Composer
   command: "composer install"
   args:
-    chdir: "/usr/local/src/drush/drush"
+    chdir: "/usr/local/src/drush"
 
 - name: Check drush has been installed
   command: "drush --version"
