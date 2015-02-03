@@ -11,6 +11,7 @@
   file:
     path: "/home/{{ username }}/dotfiles"
     recurse: yes
+    state: directory
     owner: "{{ username }}"
     group: "{{ username }}"
     mode: 777
