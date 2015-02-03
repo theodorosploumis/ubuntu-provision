@@ -7,7 +7,7 @@
   sudo: yes
 
 - name: Install Composer
-  command: "php {{ username }}/setup/composer"
+  command: "php /home/{{ username }}/setup/composer"
   sudo: yes
 
 - name: Move composer to /usr/local/bin/composer
@@ -40,7 +40,7 @@
 - name: Compile Drush with Composer
   command: "composer install"
   args:
-    chdir: /usr/local/src/drush/drush
+    chdir: "/usr/local/src/drush/drush"
 
 - name: Check drush has been installed
   command: "drush --version"
