@@ -2,10 +2,10 @@
 - name: Install PHP5 and Apache2
   apt:
     name: "{{ item }}"
-  with_items:
-    - php5
-    - libapache2-mod-php5
-    - php5-mcrypt
+    with_items:
+      - php5
+      - libapache2-mod-php5
+      - php5-mcrypt
   update_cache: yes
   force: yes
   sudo: yes
