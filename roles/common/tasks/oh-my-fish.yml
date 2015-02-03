@@ -10,8 +10,11 @@
     repo: "git://github.com/bpinto/oh-my-fish.git"
     dest: "/home/{{ username }}/.oh-my-fish"
 
-#- name: Set fish as the default shell 1
-#  shell: "chsh -s /usr/bin/fish"
+- name: Set fish as the default shell 1
+  user:
+    name: "{{ username }}"
+    shell: /usr/bin/fish
+  sudo: yes
 
 - name: fish - make sure personal fish-tplcom.load file exists
   file:
