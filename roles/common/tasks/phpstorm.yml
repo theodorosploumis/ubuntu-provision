@@ -1,4 +1,3 @@
----
 - name: Purge openjdk*
   command: apt-get purge openjdk*
   sudo: yes
@@ -14,6 +13,8 @@
     name: oracle-java7-installer
     force: yes
   sudo: yes
+  
+---
 
 - name: download phpstorm
   get_url:
