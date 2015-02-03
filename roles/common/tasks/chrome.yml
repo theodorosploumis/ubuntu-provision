@@ -8,7 +8,7 @@
 - name: Change permissions for linux_signing_key.pub
   file:
     path: "/home/{{ username }}/setup/linux_signing_key.pub"
-    user: "{{ username }}"
+    owner: "{{ username }}"
     mode: 0755
     group: "{{ username }}"
   sudo: yes
