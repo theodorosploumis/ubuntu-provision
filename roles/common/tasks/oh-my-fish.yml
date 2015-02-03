@@ -5,23 +5,11 @@
     update_cache: yes
   sudo: yes
 
-- name: Download oh-my-fish isntaller
-  get_url: 
-    url: "https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish"
-    dest: "/home/{{ username }}/setup/install_fish.sh"
+- name: Download oh-my-fish
+  git:
+    repo: "git://github.com/bpinto/oh-my-fish.git"
+    dest: "/home/{{ username }}/.oh-my-fish"
 
-- name: Change oh-my-fish script ownership
-  file:
-    dest: "/home/{{ username }}/setup/install_fish.sh"
-    owner: "{{ username }}"
-    group: "{{ username }}"
-    mode: 0755
-  sudo: yes
-
-- name: Run fish installer
-  command: "/home/{{ username }}/setup/install_fish.sh"
-  sudo: yes
-  
 - name: Set fish as the default shell 1
   command: "grep -q ^/usr/local/bin/fish$ /etc/shells"
   sudo: yes
