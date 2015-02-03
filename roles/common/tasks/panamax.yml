@@ -7,6 +7,6 @@
 
 - name: install Panamax running script
   command: "sh panamax.sh"
-    args:
-      chdir: "/home/{{ username }}/setup/"
+  args:
+    chdir: "/home/{{ username }}/setup/"
   sudo: yes
