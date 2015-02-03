@@ -37,5 +37,6 @@
     src: "/home/{{ username }}/dotfiles/oh-my-fish/config.fish"
     dest: "/home/{{ username }}/.config/fish/config.fish"
     state: link
+    force: yes
 
 
