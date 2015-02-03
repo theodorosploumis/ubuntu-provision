@@ -5,30 +5,30 @@
     update_cache: yes
   sudo: yes
 
-- name: spf13 vim - download vim
+- name: Download spf13-vim script
   get_url:
     url: "http://j.mp/spf13-vim3"
     dest: "/home/{{ username }}/setup/spf13-vim.sh"
 
-- name: spf13 vim - change ownership
+- name: Change ownership of spf13-vim script
   file:
     dest: "/home/{{ username }}/setup/spf13-vim.sh"
     owner: "{{ username }}"
     group: "{{ username }}"
     mode: 0755
 
-- name: Install vim
+- name: Install spf13-vim
   shell: "/home/{{ username }}/setup/spf13-vim.sh"
   sudo: yes
 
-- name: vim - create symlink ~/.vimrc.local
+- name: Create symlink ~/.vimrc.local
   file:
     src: "/home/{{ username }}/dotfiles/vim/.vimrc.local"
     dest: "/home/{{ username }}/.vimrc.local"
     mode: 0755
     state: link
 
-- name: vim - create symlink .vimrc.bundles.local
+- name: Create symlink .vimrc.bundles.local
   file:
     src: "/home/{{ username }}/dotfiles/.vimrc.bundles.local"
     dest: "/home/{{ username }}/.vimrc.bundles.local"
