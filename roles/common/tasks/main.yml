@@ -1,7 +1,7 @@
 ---
 # Reguirements
-#  - include: pre.yml
-#  - include: dotfiles.yml
+  - include: pre.yml
+  - include: dotfiles.yml
 
 # IDE, editors
  # - include: oh-my-fish.yml
