@@ -8,6 +8,7 @@
 
 - name: install Docker from script
   command: "sh docker.sh"
-    chdir: "/home/{{ username }}/setup/"
+    args:
+      chdir: "/home/{{ username }}/setup/"
   sudo: yes
 
