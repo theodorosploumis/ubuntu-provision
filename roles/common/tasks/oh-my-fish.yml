@@ -24,19 +24,19 @@
 - name: fish - create a symlink to my personal fish-tplcom.load file
   file:
     src: "/home/{{ username }}/dotfiles/oh-my-fish/fish-tplcom.load"
-    dest: "/home/{{ username }}/.oh-my-fish/custom/fish-tplcom.load"
+    path: "/home/{{ username }}/.oh-my-fish/custom/fish-tplcom.load"
     state: link
 
-- name: fish - make sure local fish configuration file exists
+- name: fish - create ~/.config/fish folder
   file:
-    path: "/home/{{ username }}/dotfiles/oh-my-fish/config.fish"
-    state: file
+    path: "/home/{{ username }}/.config/fish"
+    state: directory
+    force: yes
 
 - name: fish - create a symlink to my local fish configuration
   file:
     src: "/home/{{ username }}/dotfiles/oh-my-fish/config.fish"
-    dest: "/home/{{ username }}/.config/fish/config.fish"
+    path: "/home/{{ username }}/.config/fish/config.fish"
     state: link
-    force: yes
 
 
