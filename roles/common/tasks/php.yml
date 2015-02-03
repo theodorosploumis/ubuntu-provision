@@ -1,7 +1,7 @@
 ---
 - name: Install PHP5 and Apache2
   apt:
-    name: "{{ item }}"
+    name: {{ item }}
     with_items:
       - php5
       - libapache2-mod-php5
