@@ -2,24 +2,24 @@
 - name: uninstall software
   apt: 
     name: "{{ item }}"
+      with_items:
+        - thunderbird
+        - rhythmbox
+        - libreoffice-draw
+        - libreoffice-impress
+        - libreoffice-math
+        - unity-lens-photos
+        - empathy
+        - gnome-mahjongg
+        - gnomine
+        - gnome-sudoku
+        - aisleriot
+        - totem-common
+        - unity-webapps-common
+        - ibus-pinyin
+        - bittorrent
+        - evolution-data-server-online-accounts
+        - landscape-client-ui-install
     purge: yes
     force: yes
-  with_items:
-    - thunderbird
-    - rhythmbox
-    - libreoffice-draw
-    - libreoffice-impress
-    - libreoffice-math
-    - unity-lens-photos
-    - empathy
-    - gnome-mahjongg
-    - gnomine
-    - gnome-sudoku
-    - aisleriot
-    - totem-common
-    - unity-webapps-common
-    - ibus-pinyin
-    - bittorrent
-    - evolution-data-server-online-accounts
-    - landscape-client-ui-install
   sudo: yes
