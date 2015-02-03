@@ -5,6 +5,5 @@
     dest: "/home/{{ username }}/"
     force: no
     accept_hostkey: yes
-  when: result.rc !=0
   tags: z-fish
 
