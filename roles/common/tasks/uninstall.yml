@@ -1,0 +1,5 @@
+---
+- name: uninstall software
+  apt:
+    name: "{{ with.items }}"
+    
