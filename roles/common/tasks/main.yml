@@ -24,7 +24,6 @@
   - include: keepass2.yml
   - include: skype.yml
   - include: filezilla.yml
-  - include: libreoffice.yml
   - include: vlc.yml
   - include: 7zip.yml
   - include: deja-dup.yml
