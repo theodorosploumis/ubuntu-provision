@@ -33,10 +33,13 @@
 #  - include: virtualbox.yml
 #  - include: vagrant.yml
 #  - include: docker.yml
-  - include: panamax.yml
+#  - include: panamax.yml
   - include: git-ftp.yml
   - include: drush.yml
 
 # Node + Ruby and their packages
   - include: nodejs.yml
   - include: ruby.yml
+
+# Remove unused software
+#  - include: uninstall.yml
