@@ -5,6 +5,11 @@
     dest: "/home/{{ username }}/setup/phpstorm.tar.gz"
     mode: 0440
 
+- name: Create ~/setup/phpstorm folder
+  file:
+    path: "/home/{{ username }}/setup/phpstorm"
+    state: directory
+
 - name: extract phpstorm
   unarchive:
     src: "/home/{{ username }}/setup/phpstorm.tar.gz"
