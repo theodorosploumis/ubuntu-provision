@@ -31,8 +31,8 @@
 
 # DevOps
 #  - include: virtualbox.yml
-  - include: vagrant.yml
-  - include: docker.yml
+#  - include: vagrant.yml
+#  - include: docker.yml
   - include: panamax.yml
   - include: git-ftp.yml
   - include: drush.yml
