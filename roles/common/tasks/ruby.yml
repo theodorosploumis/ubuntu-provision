@@ -1,7 +1,9 @@
 ---
 - name: install Ruby
   apt:
-    name: ruby
+    name: "build-essential comerr-dev dpkg-dev fakeroot git-core krb5-multidev libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+  libcurl4-openssl-dev libfakeroot libgcrypt11-dev libgnutls-dev libgnutlsxx27 libgpg-error-dev libgssrpc4 libidn11-dev libkadm5clnt-mit9 libkadm5srv-mit9
+  libkdb5-7 libkrb5-dev libldap2-dev libp11-kit-dev libreadline-dev librtmp-dev libtasn1-6-dev python-software-properties"
     update_cache: yes
   sudo: yes
   
@@ -14,27 +16,8 @@
   shell: "/home/{{ username }}/setup/scm_breeze/install.sh"
   sudo: yes
 
-- name: Create /opt/rubygems folder
-  file:
-    path: "/opt/rubygems"
-    state: directory
-  sudo: yes
-
-- name: Clone Rubygems
-  git:
-    repo: "git://github.com/rubygems/rubygems"
-    dest: "/opt/rubygems"
-    version: "{{ rubygems_vesrion }}"
-  sudo: yes
-
-- name: Compile Rubygems
-  command: "ruby setup.rb"
-  args:
-    chdir: "/opt/rubygems"
-  sudo: yes
-
 - name: Install sass gem
-  shell: "/usr/local/rvm/bin/rvm all do gem install {{ item }}"
+  shell: "gem install {{ item }}"
   with_items:
     - capistrano
     - sass
