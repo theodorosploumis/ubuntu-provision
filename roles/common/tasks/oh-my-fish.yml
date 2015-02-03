@@ -11,7 +11,7 @@
     dest: "/home/{{ username }}/.oh-my-fish"
 
 - name: Set fish as the default shell 1
-  shell: "chsh -s /usr/bin/fish"
+  shell: "chsh {{ username }} -s /usr/bin/fish"
   sudo: yes
 
 - name: Set fish as the default shell 2
