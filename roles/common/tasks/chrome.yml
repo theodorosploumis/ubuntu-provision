@@ -14,9 +14,8 @@
   sudo: yes
 
 - name: install chrome stable - add linux_signing_key.pub to keys
-  authorized_key:
-    user: "{{ username }}"
-    key: "{{ lookup('file', '/home/{{ username }}/setup/linux_signing_key.pub') }}"
+  command: "apt-key add /home/{{ username }}/setup/linux_signing_key.pub"
+  sudo: yes
 
 - name: install chrome stable - add to google.list
   lineinfile:
