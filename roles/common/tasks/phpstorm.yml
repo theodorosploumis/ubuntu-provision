@@ -24,10 +24,10 @@
 - name: extract phpstorm
   unarchive:
     src: "/home/{{ username }}/setup/phpstorm.tar.gz"
-    dest: "/home/{{ username }}/opt/"
+    dest: "/opt/"
 
 - name: Compile phpstorm  
   command: "./phpstorm.sh"
   args:
-    chdir: "/home/{{ username }}/opt/Php*/bin"
+    chdir: "/opt/Php*/bin"
   sudo: yes
