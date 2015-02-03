@@ -1,19 +1,21 @@
 ---
+- name: Create git-ftp folder
+  file:
+    path: "/opt/git-ftp"
+    state: directory
+  sudo: yes
+
 - name: Clone git-ftp from Github
   git:
     repo: "git://github.com/git-ftp/git-ftp.git"
-    dest: /setup/git-ftp/
-    force: no
+    dest: "/opt/git-ftp/"
+    force: yes
     accept_hostkey: yes
-  when: result.rc !=0
-  tags: git-ftp
-  sudo: no
+  sudo: yes
 
 - name: Compile with make install
   command: make install
-  sudo: yes
   args:
-    chdir: /setup/git-ftp
-  when: result.rc !=0
-  tags: git-ftp
+    chdir: "/opt/git-ftp"
+  sudo: yes
 
