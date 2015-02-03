@@ -36,7 +36,7 @@
 - name: make install
   command: "make install"
   args:
-    chdir: /setup/node
+    chdir: "/opt/node"
   tags: nodejs
   sudo: yes
 
