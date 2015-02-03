@@ -2,10 +2,11 @@
 - name: install scm-breeze - checkout repo
   git:
     repo: https://github.com/ndbroadbent/scm_breeze.git
-    dest: /home/{{ username }}/setup/scm_breeze
+    dest: "/home/{{ username }}/setup/scm_breeze"
 
 - name: install scm-breeze - run script
-  command: /home/{{ username }}/setup/scm_breeze/install.sh
+  shell: "/home/{{ username }}/setup/scm_breeze/install.sh"
+  sudo: yes
 
 - name: remove ruby
   apt:
@@ -14,10 +15,17 @@
   sudo: yes
   tags: rub
 
+- name: Create /opt/ruby folder
+  file:
+    path: "/opt/ruby"
+    state: directory
+  sudo: yes
+  tags: ruby
+  
 - name: download rvm installer
   get_url:
     url: "https://get.rvm.io"
-    dest: "/home/{{ username }}/setup/rvm-install.sh"
+    dest: "/opt/ruby/rvm-install.sh"
   sudo: yes
   tags: ruby
 
@@ -26,7 +34,7 @@
   sudo: yes
 
 - name: install rvm with ruby
-  command: "bash /home/{{ username }}/setup/rvm-install.sh stable --ruby"
+  command: "bash /opt/ruby/rvm-install.sh stable --ruby"
   sudo: yes
   tags: ruby
 
