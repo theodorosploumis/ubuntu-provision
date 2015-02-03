@@ -1,6 +1,6 @@
 ---
--name: Install vim editor
- apt:
+- name: Install vim editor
+  apt:
     name: vim
     update_cache: yes
   sudo: yes
