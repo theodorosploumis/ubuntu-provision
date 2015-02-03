@@ -11,11 +11,11 @@
     dest: "/home/{{ username }}/.oh-my-fish"
 
 - name: Set fish as the default shell 1
-  shell: "chsh -s \\${which fish}"
+  shell: "chsh -s \\$(which fish)"
   sudo: yes
 
 - name: Set fish as the default shell 2
-  shell: "/bin/grep ^\\${which fish} /etc/shells -q"
+  shell: "/bin/grep ^\\$(which fish) /etc/shells -q"
   sudo: yes
 
 - name: fish - make sure personal fish-tplcom.load file exists
