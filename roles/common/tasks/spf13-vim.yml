@@ -2,17 +2,17 @@
 - name: spf13 vim - download vim
   get_url:
     url: "http://j.mp/spf13-vim3"
-    dest: "/home/{{ username }}/setup/spf13-vim"
+    dest: "/home/{{ username }}/setup/spf13-vim.sh"
 
 - name: spf13 vim - change ownership
   file:
-    dest: "/home/{{ username }}/setup/spf13-vim"
+    dest: "/home/{{ username }}/setup/spf13-vim.sh"
     owner: "{{ username }}"
     group: "{{ username }}"
     mode: 0755
 
 - name: Install vim
-  shell: "/home/{{ username }}/setup/spf13-vim"
+  shell: "/home/{{ username }}/setup/spf13-vim.sh"
   sudo: yes
 
 - name: vim - create symlink ~/.vimrc.local
