@@ -1,4 +1,10 @@
 ---
+- name: Install fish shell
+  apt:
+    name: fish
+    update_cache: yes
+  sudo: yes
+
 - name: Download oh-my-fish isntaller
   get_url: 
     url: "https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish"
