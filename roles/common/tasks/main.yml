@@ -4,7 +4,7 @@
 #  - include: dotfiles.yml
 
 # IDE, editors
-# - include: oh-my-fish.yml
+ - include: oh-my-fish.yml
 # - include: z-fish.yml
 # - include: spf13-vim.yml
 # - include: atom.yml
@@ -23,14 +23,14 @@
 # Utilities
 #  - include: keepass2.yml
 #  - include: skype.yml
-  - include: filezilla.yml
-  - include: vlc.yml
-  - include: 7zip.yml
-  - include: deja-dup.yml
-  - include: mysql-workbench.yml
+#  - include: filezilla.yml
+#  - include: vlc.yml
+#  - include: 7zip.yml
+#  - include: deja-dup.yml
+#  - include: mysql-workbench.yml
 
 # DevOps
-  - include: virtualbox.yml
+#  - include: virtualbox.yml
   - include: vagrant.yml
   - include: docker.yml
   - include: panamax.yml
