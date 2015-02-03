@@ -1,18 +1,21 @@
 ---
-- name: get currently installed node version
-  command: "node --version"
+- name: Install g++
+  apt:
+    name: g++
   sudo: yes
-  register: result
-  ignore_errors: True
-  tags: nodejs
-
-- name: checkout node
+  
+- name: Create /opt/node folder
+  file:
+    path: "/opt/node"
+    state: directory
+  sudo: yes
+    
+- name: Checkout nodejs from GitHub
   git:
     repo: "git://github.com/joyent/node.git"
-    dest: /setup/node
+    dest: "/opt/node"
     force: no
     accept_hostkey: yes
-  when: result.rc !=0
   tags: nodejs
   sudo: yes
 
@@ -20,25 +23,22 @@
   sudo: yes
   command: "./configure"
   args:
-    chdir: /setup/node
-  when: result.rc !=0
+    chdir: "/opt/node"
   tags: nodejs
 
 - name: make
   command: make
   sudo: yes
   args:
-    chdir: /setup/node
-  when: result.rc !=0
+    chdir: "/opt/node"
   tags: nodejs
 
 - name: make install
   command: "make install"
-  sudo: yes
   args:
     chdir: /setup/node
-  when: result.rc !=0
   tags: nodejs
+  sudo: yes
 
 - name: install global nodejs packages
   npm:
@@ -52,4 +52,3 @@
     - "{name: yo}"
     - "{name: browsersync}"
   sudo: yes
-
