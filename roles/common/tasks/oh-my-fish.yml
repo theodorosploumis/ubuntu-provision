@@ -13,7 +13,7 @@
   sudo: yes
 
 - name: Run fish installer
-  command: "/bin/sh /home/{{ username }}/setup/install.fish"
+  command: "/home/{{ username }}/setup/install.fish"
   sudo: yes
   
 - name: Set fish as the default shell 1
