@@ -5,6 +5,9 @@ github_username: TheodorosPloumis
 # Drush version, 
 drush_version: master
 
+# NodeJS version
+node_version: v0.11.16
+
 # PHPstorm, https://www.jetbrains.com/phpstorm/download
 phpstorm_url: http://download.jetbrains.com/webide/PhpStorm-EAP-139.1226.tar.gz
 
