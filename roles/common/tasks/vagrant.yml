@@ -11,6 +11,15 @@
     deb: "/home/{{ username }}/setup/vagrant.deb"
   sudo: yes
   
+- name: Change ownership for ~/.vagrant.d folder
+  file:
+    path: "/home{{ username }}/.vagrant.d"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    state: directory
+    recurse: yes
+  sudo: yes
+
 - name: install vagrant plugins
   command: "vagrant plugin install {{ item }}"
   with_items:
