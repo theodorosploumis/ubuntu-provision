@@ -53,5 +53,5 @@
   sudo: yes
   
 - name: Install usefull drush modules
-  command: "drush dl registry_rebuild site_audit drupalgeddon"
+  command: "drush dl registry_rebuild site_audit drupalgeddon drush-vagrant drupal-up aegir-up drush-hosts"
   
