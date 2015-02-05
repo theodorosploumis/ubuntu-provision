@@ -31,6 +31,10 @@
   - include: deja-dup.yml
   - include: mysql-workbench.yml
 
+# Node + Ruby and their packages
+  - include: nodejs.yml
+  - include: ruby.yml
+
 # DevOps
   - include: virtualbox.yml
   - include: vagrant.yml
@@ -39,10 +43,6 @@
   - include: git-ftp.yml
   - include: php.yml
   - include: drush.yml
-
-# Node + Ruby and their packages
-  - include: nodejs.yml
-  - include: ruby.yml
 
 # Remove unused software
   - include: uninstall.yml
