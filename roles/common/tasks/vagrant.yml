@@ -26,6 +26,7 @@
    - vagrant-cachier
    - vagrant-gatling-rsync
    - vagrant-share
+   - vagrant-hostsupdater
    - vagrant-triggers
    - vagrant-vbguest
 
