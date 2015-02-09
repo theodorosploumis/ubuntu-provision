@@ -1,0 +1,14 @@
+---
+- name: Install Git
+  apt:
+    name: git
+    update_cache: true
+  sudo: yes
+
+- name: Symlink gitconfig from ~/dotfiles
+  file:
+    path: "/home/{{ username }}/.gitconfig" 
+    src: "/home/{{ username }}/dotfiles/git/gitconfig"
+    state: link
+
+  
