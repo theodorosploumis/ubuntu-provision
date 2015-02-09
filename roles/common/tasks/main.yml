@@ -2,6 +2,7 @@
 # Reguirements
   - include: pre.yml
   - include: dotfiles.yml
+  - include: git.yml
   - include: java.yml
 
 # IDE, editors
