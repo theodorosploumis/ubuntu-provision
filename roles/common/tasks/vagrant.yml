@@ -29,4 +29,6 @@
    - vagrant-hostsupdater
    - vagrant-triggers
    - vagrant-vbguest
+   - vagrant-bindfs
+   - vagrant-hostmanager
 
