@@ -37,6 +37,7 @@
   - include: ruby.yml
 
 # DevOps
+  - include: chef.yml
   - include: virtualbox.yml
   - include: vagrant.yml
   - include: docker.yml
