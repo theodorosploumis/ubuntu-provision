@@ -6,17 +6,17 @@ github_username: TheodorosPloumis
 drush_version: master
 
 # NodeJS version
-node_version: v0.11.16
+node_version: v0.12.0
 
 # Rubygems vesrion
-rubygems_vesrion: v2.4.5
+rubygems_vesrion: v2.4.6
 
 # PHPstorm, https://www.jetbrains.com/phpstorm/download
-phpstorm_url: http://download.jetbrains.com/webide/PhpStorm-EAP-139.1226.tar.gz
+phpstorm_url: https://download.jetbrains.com/webide/PhpStorm-8.0.3.tar.gz
 
 # Vagrant package, https://www.vagrantup.com/downloads.html
 vagrant_url: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
 
 # VirtualBox, https://www.virtualbox.org/wiki/Linux_Downloads
-virtualbox_url: http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb
+virtualbox_url: http://download.virtualbox.org/virtualbox/4.3.22/virtualbox-4.3_4.3.22-98236~Ubuntu~raring_amd64.deb
 
