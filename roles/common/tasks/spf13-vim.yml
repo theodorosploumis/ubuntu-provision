@@ -21,6 +21,10 @@
   shell: "/home/{{ username }}/setup/spf13-vim.sh"
   sudo: yes
 
+- name: Remove ~/.vimrc.local
+  command: "rm -f /home/{{ username }}/.vimrc.local"
+  sudo: yeh
+
 - name: Create symlink ~/.vimrc.local
   file:
     src: "/home/{{ username }}/dotfiles/vim/vimrc.local"
