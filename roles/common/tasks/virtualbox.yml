@@ -1,12 +1,16 @@
 ---
-- name: download virtualbox .deb package
+- name: Install dkms package
+  apt:
+    name: dkms
+  sudo: yes
+  
+- name: Download virtualbox .deb package
   get_url:
     url: "{{ virtualbox_url }}"
     dest: "/home/{{ username }}/setup/virtualbox.deb"
     mode: 0755
 
-- name: install virtualbox
+- name: Install virtualbox
   apt:
     deb: "/home/{{ username }}/setup/virtualbox.deb"
   sudo: yes
-
