@@ -1,15 +1,11 @@
-sudo apt-get install python-setuptools
+# Install required software
+sudo apt-get install python-setuptools aptitude git curl python-dev libxml2-dev libxslt-dev
 
 # sudo easy_install pip
 # OR
 # sudo apt-get install python-pip
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
-
-sudo apt-get install aptitude
-sudo apt-get install git
-sudo apt-get install curl
-sudo apt-get install python-dev libxml2-dev libxslt-dev
 
 cd ~
 mkdir -p setup
