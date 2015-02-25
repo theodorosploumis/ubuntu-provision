@@ -26,6 +26,7 @@
 # Utilities
   - include: keepass2.yml
   - include: skype.yml
+  - include: tmux.yml
   - include: filezilla.yml
   - include: vlc.yml
   - include: 7zip.yml
@@ -41,6 +42,7 @@
   - include: virtualbox.yml
   - include: vagrant.yml
   - include: docker.yml
+  - include: fig.yml
   - include: panamax.yml
   - include: git-ftp.yml
   - include: php.yml
