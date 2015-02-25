@@ -1,9 +1,35 @@
 ---
 - name: install Ruby
   apt:
-    name: "build-essential comerr-dev dpkg-dev fakeroot git-core krb5-multidev libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
-  libcurl4-openssl-dev libfakeroot libgcrypt11-dev libgnutls-dev libgnutlsxx27 libgpg-error-dev libgssrpc4 libidn11-dev libkadm5clnt-mit9 libkadm5srv-mit9
-  libkdb5-7 libkrb5-dev libldap2-dev libp11-kit-dev libreadline-dev librtmp-dev libtasn1-6-dev python-software-properties"
+    name: {{ item }}
+    with_items:
+    - build-essential
+    - comerr-dev
+    - dpkg-dev
+    - fakeroot
+    - git-core
+    - krb5-multidev
+    - libalgorithm-diff-perl
+    - libalgorithm-diff-xs-perl
+    - libalgorithm-merge-perl
+    - libcurl4-openssl-dev
+    - libfakeroot
+    - libgcrypt11-dev
+    - libgnutls-dev
+    - libgnutlsxx27
+    - libgpg-error-dev
+    - libgssrpc4
+    - libidn11-dev
+    - libkadm5clnt-mit9
+    - libkadm5srv-mit9
+    - libkdb5-7
+    - libkrb5-dev
+    - libldap2-dev
+    - libp11-kit-dev
+    - libreadline-dev
+    - librtmp-dev
+    - libtasn1-6-dev
+    - python-software-properties
     update_cache: yes
   sudo: yes
   
