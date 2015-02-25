@@ -1,6 +1,7 @@
 ---
 - name: Install PHP5 and Apache2
-  command: "apt-get install {{ item }}"
+  pkg: {{ item }}
+  state: latest
   with_items:
     - php5
     - libapache2-mod-php5
