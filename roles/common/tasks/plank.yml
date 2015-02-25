@@ -19,7 +19,7 @@
 
 - name: install plank - Make Plank autostart
   copy:
-    src: plank.desktop
+    src: /home/{{ username }}/dotfiles/plank.desktop
     dest: /home/{{ username }}/.config/autostart/plank.desktop
     mode: 0755
 
