@@ -18,5 +18,4 @@
   apt:
     name: opera
     update_cache: yes
-    force: yes
   sudo: yes
