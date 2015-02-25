@@ -22,6 +22,7 @@
   - include: numix.yml
   - include: plank.yml
   - include: fonts.yml
+  - include: monitor.yml
 
 # Utilities
   - include: keepass2.yml
