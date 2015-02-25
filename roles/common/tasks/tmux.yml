@@ -1,0 +1,12 @@
+---
+- name: Install tmux
+  apt:
+    name: tmux
+    update_cache: yes
+  sudo: yes
+
+- name: Install terminator
+  apt:
+    name: terminator
+    update_cache: yes
+  sudo: yes
