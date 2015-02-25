@@ -11,6 +11,9 @@ node_version: v0.12.0
 # Rubygems vesrion
 rubygems_vesrion: v2.4.6
 
+# Skype URL
+skype_url: http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+
 # PHPstorm, https://www.jetbrains.com/phpstorm/download
 phpstorm_url: https://download.jetbrains.com/webide/PhpStorm-8.0.3.tar.gz
 
