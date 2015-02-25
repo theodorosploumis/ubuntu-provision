@@ -23,6 +23,6 @@
 
 - name: install Skype
   command: "gdebi skype-ubuntu-precise_4.3.0.37-1_i386.deb"
-    args:
-      chdir: "/home/{{ username }}/setup"
+  args:
+    chdir: "/home/{{ username }}/setup"
   sudo: yes
