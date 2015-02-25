@@ -55,3 +55,12 @@
 - name: Install usefull drush modules
   command: "drush dl registry_rebuild site_audit drupalgeddon drush-vagrant drupal-up aegir-up drush-hosts"
   
+- name: Install Drush-patchfile
+    git:
+    repo: "git://bitbucket.org/davereid/drush-patchfile.git"
+    dest: "/home/{{ username }}/.drush/drush-patchfile"
+    version: master
+    force: yes
+    accept_hostkey: yes
+  tags: drush
+  
