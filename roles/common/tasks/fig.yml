@@ -1,0 +1,4 @@
+---
+- name: Install fig (Docker's controller)
+  command: "pip install -U fig"
+  sudo: yes
