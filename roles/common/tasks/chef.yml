@@ -1,5 +1,10 @@
 ---
-- name: Installing chef from official script
-  command: "curl -L https://www.opscode.com/chef/install.sh | sudo bash"
+- name:Download chef from official script
+  get_url:
+    url: https://www.opscode.com/chef/install.sh
+    dest: "/home/{{ username }}/setup/installchef.sh"
   sudo: yes
 
+- name: Run chef installer
+  command: "bash /home/{{ username }}/setup/installchef.sh"
+  sudo: yes
