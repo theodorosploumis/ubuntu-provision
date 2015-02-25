@@ -30,6 +30,7 @@
       - librtmp-dev
       - libtasn1-6-dev
       - python-software-properties
+      - ruby-dev
       - ruby
     update_cache: yes
   sudo: yes
