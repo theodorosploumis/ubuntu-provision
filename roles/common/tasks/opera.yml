@@ -5,7 +5,13 @@
   sudo: yes
   
 - name: get Opera key
-  command: "wget -qO - http://deb.opera.com/archive.key | sudo apt-key add -"
+  get_url: 
+    url: http://deb.opera.com/archive.key
+    dest: /home/{{ username }}/setup
+  sudo: yes
+
+- name: Install Opera key
+  command: "apt-key add /home/{{ username }}/setup/arcive.key"
   sudo: yes
 
 - name: Install Opera browser
