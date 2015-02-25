@@ -50,5 +50,6 @@
     - sass
     - boostrap-sass
     - compass
+    - tmuxinator
   sudo: yes
 
