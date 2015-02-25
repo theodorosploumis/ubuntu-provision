@@ -17,7 +17,7 @@
 
 - name: Download Skype
   get_url:
-    url: "http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb"
+    url: "{{ skype_url }}"
     dest: "/home/{{ username }}/setup"
   sudo: yes
 
