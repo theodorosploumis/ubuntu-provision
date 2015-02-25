@@ -1,6 +1,6 @@
 ---
-- name: uninstall software
-  apt: name="{{ item }}" purge=yes force=yes
+- name: Uninstall software
+  apt: name="{{ item }}" purge=yes force=yes state=absent
   with_items:
     - thunderbird
     - rhythmbox
