@@ -11,7 +11,7 @@
   sudo: yes
 
 - name: Install Opera key
-  command: "apt-key add /home/{{ username }}/setup/arcive.key"
+  command: "apt-key add /home/{{ username }}/setup/archive.key"
   sudo: yes
 
 - name: Install Opera browser
