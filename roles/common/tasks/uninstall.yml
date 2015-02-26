@@ -20,3 +20,9 @@
     - evolution-data-server-online-accounts
     - landscape-client-ui-install
   sudo: yes
+  
+- name: Remove ~/setup folder
+  file:
+    path: "/home/{{ username }}/setup"
+    state: absent
+  sudo: yes
