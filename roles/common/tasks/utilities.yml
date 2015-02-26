@@ -1,0 +1,21 @@
+---
+- name: Install several utilities and monitoring software
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - deja-dup
+    - nautilus-open-terminal
+    - gparted
+    - keepass2
+    - vlc
+    - filezilla
+    - p7zip-full
+    - terminator
+    - tmux
+    - smartmontools
+    - gksu
+    - leafpad
+  update_cache: yes
+  sudo: yes
+
+
+  

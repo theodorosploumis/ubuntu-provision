@@ -1,6 +1,0 @@
----
-- name: install deja-dup
-  apt:
-    name: deja-dup
-    update_cache: yes
-  sudo: yes
