@@ -23,16 +23,10 @@
   - include: numix.yml
   - include: plank.yml
   - include: fonts.yml
-  - include: monitor.yml
 
 # Utilities
-  - include: keepass2.yml
+  - include: utilities.yml
   - include: skype.yml
-  - include: tmux.yml
-  - include: filezilla.yml
-  - include: vlc.yml
-  - include: 7zip.yml
-  - include: deja-dup.yml
   - include: mysql-workbench.yml
 
 # Node + Ruby and their packages
