@@ -1,9 +1,0 @@
----
-- name: Install several utilities and monitoring software
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - smartmontools
-    - gksu
-    - leafpad
-  update_cache: yes
-  sudo: yes
