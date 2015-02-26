@@ -39,4 +39,10 @@
     path: "/home/{{ username }}/.config/fish/config.fish"
     state: link
 
-
+- name: Clone z-fish from github
+  git:
+    repo: "git://github.com/sjl/z-fish.git"
+    dest: "/home/{{ username }}/z-fish"
+    force: no
+    accept_hostkey: yes
+  tags: z-fish
