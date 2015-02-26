@@ -32,3 +32,7 @@
    - vagrant-bindfs
    - vagrant-hostmanager
 
+- name: Install nfs (nfs-kernel-server)
+  apt:
+    name: nfs-kernel-server
+  sudo: yes
