@@ -16,4 +16,9 @@
     group: "{{ username }}"
     mode: 0775
   sudo: yes
-    
+
+- name: Symlink my .aliases from dotfiles
+  file:
+    src: "/home/{{ username }}/dotfiles/aliases"
+    path: "/home/{{ username }}/.aliases"
+    state: link
