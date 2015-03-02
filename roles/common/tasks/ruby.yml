@@ -51,5 +51,7 @@
     - boostrap-sass
     - compass
     - tmuxinator
+    - autoprefixer-rails
+    - bundler
   sudo: yes
 
