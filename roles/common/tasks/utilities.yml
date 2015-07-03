@@ -14,6 +14,7 @@
     - smartmontools
     - gksu
     - leafpad
+    - lxc
   update_cache: yes
   sudo: yes
 
