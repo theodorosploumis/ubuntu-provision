@@ -27,9 +27,11 @@
    - vagrant-gatling-rsync
    - vagrant-share
    - vagrant-hostsupdater
+   - vagrant-hostmanager
    - vagrant-triggers
    - vagrant-vbguest
    - vagrant-bindfs
+   - vagrant-lxc
    - vagrant-hostmanager
 
 - name: Install nfs (nfs-kernel-server)
