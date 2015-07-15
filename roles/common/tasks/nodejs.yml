@@ -53,4 +53,7 @@
     - browser-sync
     #- cordova
     #- ionic
+    #- phonegap
+    #- angular
+    #- generator-angular
   sudo: yes
