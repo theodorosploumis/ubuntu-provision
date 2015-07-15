@@ -51,4 +51,6 @@
     - grunt-cli
     - yo
     - browser-sync
+    #- cordova
+    #- ionic
   sudo: yes
