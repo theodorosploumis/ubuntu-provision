@@ -17,6 +17,6 @@ sudo chmod -R 777 ~/ubuntu-provision
 sudo pip install -r requirements.txt
 
 # Run Ansible...
-ansible-playbook main.yml -i HOSTS --ask-sudo-pass  --module-path ./ansible_modules
+ansible-playbook setup.yml -i HOSTS --ask-sudo-pass  --module-path ./ansible_modules
 
 exit 0
