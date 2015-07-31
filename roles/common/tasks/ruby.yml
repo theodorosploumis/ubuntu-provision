@@ -1,44 +1,16 @@
 ---
+- name: install Ruby from ppa
+  apt_repository:
+    repo: "ppa:brightbox/ruby-ng-experimental"
+    state: present
+    update_cache: yes
+  sudo: yes
+
 - name: install Ruby
   apt: pkg={{ item }} state=latest
   with_items:
-    - build-essential
-    - comerr-dev
-    - dpkg-dev
-    - fakeroot
-    - git-core
-    - krb5-multidev
-    - libalgorithm-diff-perl
-    - libalgorithm-diff-xs-perl
-    - libalgorithm-merge-perl
-    - libcurl4-openssl-dev
-    - libfakeroot
-    - libgcrypt11-dev
-    - libgnutls-dev
-    - libgpg-error-dev
-    - libgssrpc4
-    - libidn11-dev
-    - libkadm5clnt-mit9
-    - libkadm5srv-mit9
-    - libkdb5-7
-    - libkrb5-dev
-    - libldap2-dev
-    - libp11-kit-dev
-    - libreadline-dev
-    - librtmp-dev
-    - libtasn1-6-dev
-    - python-software-properties
-    - ruby-dev
-    - ruby2.0
-  sudo: yes
-  
-- name: install scm-breeze - checkout repo
-  git:
-    repo: "git://github.com/ndbroadbent/scm_breeze.git"
-    dest: "/home/{{ username }}/setup/scm_breeze"
-
-- name: install scm-breeze - run script
-  shell: "/home/{{ username }}/setup/scm_breeze/install.sh"
+    - ruby2.2
+    - ruby2.2-dev
   sudo: yes
 
 - name: Install sass gem
