@@ -17,4 +17,4 @@
     state: link
 
 - name: Set zsh as default shell
-  user: name=$user shell=/bin/zsh
+  user: name={{ username }} shell=/bin/zsh
