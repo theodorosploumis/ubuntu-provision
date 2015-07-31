@@ -31,7 +31,6 @@
     - python-software-properties
     - ruby-dev
     - ruby2.0
-  update_cache: yes
   sudo: yes
   
 - name: install scm-breeze - checkout repo
