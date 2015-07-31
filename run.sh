@@ -7,13 +7,13 @@ sudo easy_install pip
 # Clone the repository
 cd ~
 git clone https://github.com/TheodorosPloumis/ubuntu-provision.git ~/ubuntu-provision
-cd ~/ubuntu-provision
 
 # Change permissions and owner of the folder
 sudo chown -R $USER:$USER ~/ubuntu-provision
 sudo chmod -x -R ~/ubuntu-provision
 
 # Install Ansible requirements
+cd ~/ubuntu-provision
 sudo pip install -r requirements.txt
 
 # Run Ansible...
