@@ -57,7 +57,7 @@
   
 - name: Install Drush-patchfile
   git:
-    repo: "git@bitbucket.org/davereid/drush-patchfile.git"
+    repo: "https://bitbucket.org/davereid/drush-patchfile"
     dest: "/home/{{ username }}/.drush/drush-patchfile"
     version: master
     force: yes
