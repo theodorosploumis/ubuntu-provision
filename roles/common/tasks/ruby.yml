@@ -15,15 +15,15 @@
     - ruby-switch
   sudo: yes
 
-- name: Install some gems
-  shell: "gem install {{ item }}"
-  with_items:
+#- name: Install some gems
+#  shell: "gem install {{ item }}"
+#  with_items:
   #  - capistrano
   #  - sass
   #  - boostrap-sass
   #  - compass
-    - tmuxinator
+  #  - tmuxinator
   #  - autoprefixer-rails
   #  - bundler
-  sudo: yes
+#  sudo: yes
 
