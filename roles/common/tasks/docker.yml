@@ -3,12 +3,12 @@
   get_url:
     url: "https://get.docker.com/ubuntu/"
     validate_certs: no
-    dest: "/home/{{ username }}/setup/docker.sh"
+    dest: "/home/{{ username }}/ubuntu-provision/docker.sh"
   sudo: yes
 
 - name: install Docker from script
   command: "sh docker.sh"
   args:
-    chdir: "/home/{{ username }}/setup/"
+    chdir: "/home/{{ username }}/ubuntu-provision/"
   sudo: yes
 
