@@ -10,8 +10,8 @@ git clone https://github.com/TheodorosPloumis/ubuntu-provision.git ~/ubuntu-prov
 cd ~/ubuntu-provision
 
 # Change permissions and owner of the folder
-sudo chown tpl:tpl ~/ubuntu-provision
-sudo chmod -Rx 777 ~/ubuntu-provision
+sudo chown -R $USER:$USER ~/ubuntu-provision
+sudo chmod 777 -R ~/ubuntu-provision
 
 # Install Ansible requirements
 sudo pip install -r requirements.txt
