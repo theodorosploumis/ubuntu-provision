@@ -11,7 +11,7 @@
   with_items:
     - ruby2.1
     - ruby2.1-dev
-    - rubygems
+#    - rubygems
     - ruby-switch
   sudo: yes
 
