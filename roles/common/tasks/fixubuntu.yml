@@ -1,4 +1,7 @@
 ---
 - name: run fixubuntu from local files
+  file: 
+    path: "/home/{{ username }}/ubuntu-provision/roles/common/files/fixubuntu.sh"
+    mode: 0777
   shell: "/home/{{ username }}/ubuntu-provision/roles/common/files/fixubuntu.sh"
   sudo: yes
