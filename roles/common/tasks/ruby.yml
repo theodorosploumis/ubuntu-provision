@@ -15,7 +15,6 @@
     - libfakeroot
     - libgcrypt11-dev
     - libgnutls-dev
-    - libgnutlsxx27
     - libgpg-error-dev
     - libgssrpc4
     - libidn11-dev
