@@ -4,19 +4,17 @@
     name: zsh
   sudo: yes
 
+- name: Clone oh-my-zsh repo
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/{{ username }}/.oh-my-zsh
+
+- name: remove standard zshrc
+  file: path=/home/$user/.zshrc state=absent
+
 - name: Symlink my .zshrc from dotfiles
   file:
     src: "/home/{{ username }}/dotfiles/zsh/zshrc"
     path: "/home/{{ username }}/.zshrc"
     state: link
 
-- name: Download oh-my-zsh installer
-  get_url:
-    url: "https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
-    validate_certs: no
-    dest: "/home/{{ username }}/setup/oh-my-zsh-installer.sh"
-    mode: 0755
-
-- name: Run oh-my-zsh installer
-  shell: "/home/{{ username }}/setup/oh-my-zsh-installer.sh"
-  sudo: yes
+- name: Set zsh as default shell
+  user: name=$user shell=/bin/zsh
