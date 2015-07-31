@@ -9,19 +9,21 @@
 - name: install Ruby
   apt: pkg={{ item }} state=latest
   with_items:
-    - ruby2.2
-    - ruby2.2-dev
+    - ruby2.1
+    - ruby2.1-dev
+    - rubygems
+    - ruby-switch
   sudo: yes
 
-- name: Install sass gem
+- name: Install some gems
   shell: "gem install {{ item }}"
   with_items:
-    - capistrano
-    - sass
-    - boostrap-sass
-    - compass
+  #  - capistrano
+  #  - sass
+  #  - boostrap-sass
+  #  - compass
     - tmuxinator
-    - autoprefixer-rails
-    - bundler
+  #  - autoprefixer-rails
+  #  - bundler
   sudo: yes
 
