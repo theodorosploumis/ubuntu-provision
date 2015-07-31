@@ -1,7 +1,7 @@
 ---
 - name: Clone my dotfiles
   git:
-    repo: "git://github.com/theodorosploumis/dotfiles.git"
+    repo: "git@bitbucket.org/theodorosploumis/dotfiles.git"
     dest: "/home/{{ username }}/dotfiles"
     force: yes
     accept_hostkey: yes
