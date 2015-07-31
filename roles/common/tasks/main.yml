@@ -1,7 +1,7 @@
 ---
 # Reguirements
-  - include: pre.yml
-  - include: dotfiles.yml
+#  - include: pre.yml
+#  - include: dotfiles.yml
 #  - include: git.yml
 #  - include: java.yml
 
@@ -18,18 +18,18 @@
 #  - include: opera.yml
 
 # System
-  - include: fixubuntu.yml
-  - include: numix.yml
-  - include: plank.yml
-  - include: fonts.yml
+#  - include: fixubuntu.yml
+#  - include: numix.yml
+#  - include: plank.yml
+#  - include: fonts.yml
 
 # Utilities
-  - include: utilities.yml
-  - include: skype.yml
-  - include: mysql-workbench.yml
+#  - include: utilities.yml
+#  - include: skype.yml
+#  - include: mysql-workbench.yml
 
 # Node + Ruby and their packages
-  - include: nodejs.yml
+#  - include: nodejs.yml
   - include: ruby.yml
 
 # DevOps
