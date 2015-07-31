@@ -33,7 +33,7 @@
 
 - name: Create symlink .vimrc.bundles.local
   file:
-    src: "/home/{{ username }}/dotfiles/vimrc.bundles.local"
+    src: "/home/{{ username }}/dotfiles/vim/vimrc.bundles.local"
     dest: "/home/{{ username }}/.vimrc.bundles.local"
     mode: 0755
     state: link
