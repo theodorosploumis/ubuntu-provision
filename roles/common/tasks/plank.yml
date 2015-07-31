@@ -11,15 +11,10 @@
     name: plank
   sudo: yes
 
-- name: install plank - Make sure that the autostart directory exsists
-  file:
-    path: /home/{{ username }}/.config/autostart
-    state: directory
-
 - name: install plank - Make Plank autostart
   file:
     src: /usr/share/applications/plank.desktop
-    dest: /etc/xdg/autostart/
+    dest: /etc/xdg/autostart/plank.desktop
     state: link
   sudo: yes
 
@@ -27,3 +22,4 @@
   dconf:
     key: /org/compiz/profiles/unity/plugins/unityshell/launcher-hide-mode
     int: 1
+  sudo: yes
