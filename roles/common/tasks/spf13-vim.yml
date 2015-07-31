@@ -17,7 +17,7 @@
     mode: 0755
 
 - name: Install spf13-vim
-  when: "/home/{{ username }}/setup/spf13-vim.sh".stat.exists == False
+  when: /home/{{ username }}/setup/spf13-vim.sh.stat.exists == False
   shell: "/home/{{ username }}/setup/spf13-vim.sh"
   sudo: yes
 
