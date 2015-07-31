@@ -30,18 +30,18 @@
 
 # Node + Ruby and their packages
 #  - include: nodejs.yml
-  - include: ruby.yml
+#  - include: ruby.yml
 
 # DevOps
 #  - include: chef.yml
-  - include: virtualbox.yml
-  - include: vagrant.yml
-  - include: docker.yml
+#  - include: virtualbox.yml
+#  - include: vagrant.yml
+#  - include: docker.yml
 #  - include: fig.yml
 #  - include: panamax.yml
 #  - include: git-ftp.yml
-  - include: php.yml
-  - include: drush.yml
+#  - include: php.yml
+#  - include: drush.yml
 
 # Remove unused software
   - include: uninstall.yml
