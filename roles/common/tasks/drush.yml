@@ -2,12 +2,12 @@
 - name: Download composer
   get_url:
     url: "https://getcomposer.org/installer"
-    dest: "/home/{{ username }}/setup/composer"
+    dest: "/home/{{ username }}/ubuntu-provision/composer"
     validate_certs: no
   sudo: yes
 
 - name: Install Composer
-  command: "php /home/{{ username }}/setup/composer"
+  command: "php /home/{{ username }}/ubuntu-provision/composer"
   sudo: yes
 
 - name: Move composer to /usr/local/bin/composer
@@ -21,26 +21,9 @@
     state: link
   sudo: yes
 
-- name: Clone drush from github
-  git:
-    repo: "git://github.com/drush-ops/drush.git"
-    dest: /usr/local/src/drush
-    version: "{{ drush_version }}"
-    force: yes
-    accept_hostkey: yes
-  tags: drush
-
-- name: Create Drush symlink
-  file:
-    src: /usr/local/src/drush/drush
-    dest: /usr/bin/drush
-    state: link
-  sudo: yes
-
 - name: Compile Drush with Composer
-  command: "composer install"
-  args:
-    chdir: "/usr/local/src/drush"
+  command: "composer global require drush/drush:dev-master"
+  sudo: yes
 
 - name: Change ~/.drush folder permissions
   file:
@@ -55,7 +38,7 @@
 - name: Install usefull drush modules
   command: "drush dl registry_rebuild site_audit drupalgeddon drush-vagrant drupal-up aegir-up drush-hosts"
   args:
-    chdir: "/usr/local/src/drush"
+    chdir: "~/.drush"
   
 - name: Install Drush-patchfile
   git:
