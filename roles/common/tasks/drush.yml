@@ -54,6 +54,8 @@
   
 - name: Install usefull drush modules
   command: "drush dl registry_rebuild site_audit drupalgeddon drush-vagrant drupal-up aegir-up drush-hosts"
+  args:
+    chdir: "/usr/local/src/drush"
   
 - name: Install Drush-patchfile
   git:
