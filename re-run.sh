@@ -1,8 +1,6 @@
-cd ~
-mkdir -p setup
-cd setup
-git clone https://github.com/TheodorosPloumis/ubuntu-provision.git
-cd ubuntu-provision
+# Run only Ansible without the requirements etc
+
+cd ~/ubuntu-provision
 
 sudo pip install -r requirements.txt
 
