@@ -1,7 +1,9 @@
 ---
-- name: run fixubuntu from local files
+- name: chmod fixubuntu.sh file
   file: 
     path: "/home/{{ username }}/ubuntu-provision/roles/common/files/fixubuntu.sh"
     mode: 0777
+
+- name: run fixubuntu.sh from local files
   shell: "/home/{{ username }}/ubuntu-provision/roles/common/files/fixubuntu.sh"
   sudo: yes
