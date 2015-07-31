@@ -11,7 +11,7 @@ cd ~/ubuntu-provision
 
 # Change permissions and owner of the folder
 #sudo chown -R $USER:$USER ~/ubuntu-provision
-#sudo chmod 777 -R ~/ubuntu-provision
+sudo chmod -x -R ~/ubuntu-provision
 
 # Install Ansible requirements
 sudo pip install -r requirements.txt
