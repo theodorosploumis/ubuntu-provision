@@ -5,6 +5,7 @@
     dest: "/home/{{ username }}/dotfiles"
 #    force: yes
     accept_hostkey: yes
+    key_file: "/home/{{ username }}/.ssh/id_rsa"
   tags: dotfiles
   
 - name: Change ownership of dotfiles
