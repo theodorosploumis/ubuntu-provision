@@ -4,18 +4,17 @@
   with_items:
     - deja-dup
     - nautilus-open-terminal
-    - gparted
-    - keepass2
-    - vlc
+#    - gparted
+#    - keepass2
+#    - vlc
     - filezilla
     - p7zip-full
-    - terminator
+#    - terminator
     - tmux
-    - smartmontools
+#    - smartmontools
     - gksu
     - leafpad
-    - lxc
-  update_cache: yes
+#    - lxc
   sudo: yes
 
 
