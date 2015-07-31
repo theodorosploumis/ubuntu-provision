@@ -3,14 +3,14 @@
   - include: pre.yml
   - include: dotfiles.yml
 #  - include: git.yml
-  - include: java.yml
+#  - include: java.yml
 
 # IDE, editors
 #  - include: oh-my-fish.yml
   - include: oh-my-zsh.yml
   - include: spf13-vim.yml
   - include: atom.yml
-  - include: phpstorm.yml
+#  - include: phpstorm.yml
 
 # Browsers
   - include: chrome.yml
