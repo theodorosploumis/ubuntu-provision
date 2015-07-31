@@ -1,7 +1,7 @@
 ---
 - name: install plank - add plank ppa
   apt_repository:
-    repo: ppa:ricotz/docky
+    repo: ppa:docky-core/stable
     state: present
     update_cache: yes
   sudo: yes
@@ -17,10 +17,11 @@
     state: directory
 
 - name: install plank - Make Plank autostart
-  copy:
-    src: /home/{{ username }}/dotfiles/config/autostart/plank.desktop
-    dest: /home/{{ username }}/.config/autostart/plank.desktop
-    mode: 0755
+  file:
+    src: /usr/share/applications/plank.desktop
+    dest: /etc/xdg/autostart/
+    state: link
+  sudo: yes
 
 - name: gnome-terminal launcher-hide-mode
   dconf:
