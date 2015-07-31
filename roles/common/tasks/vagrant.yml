@@ -2,13 +2,13 @@
 - name: download vagrant .deb package
   get_url:
     url: "{{ vagrant_url }}"
-    dest: "/home/{{ username }}/setup/vagrant.deb"
+    dest: "/home/{{ username }}/ubuntu-provision/vagrant.deb"
     validate_certs: no
     mode: 0755
 
 - name: install vagrant
   apt:
-    deb: "/home/{{ username }}/setup/vagrant.deb"
+    deb: "/home/{{ username }}/ubuntu-provision/vagrant.deb"
   sudo: yes
   
 - name: Change ownership for ~/.vagrant.d folder
@@ -24,15 +24,14 @@
   command: "vagrant plugin install {{ item }}"
   with_items:
    - vagrant-cachier
-   - vagrant-gatling-rsync
-   - vagrant-share
+#   - vagrant-gatling-rsync
+#   - vagrant-share
    - vagrant-hostsupdater
    - vagrant-hostmanager
-   - vagrant-triggers
+#   - vagrant-triggers
    - vagrant-vbguest
-   - vagrant-bindfs
-   - vagrant-lxc
-   - vagrant-hostmanager
+#   - vagrant-bindfs
+#   - vagrant-lxc
 
 - name: Install nfs (nfs-kernel-server)
   apt:
