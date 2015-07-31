@@ -9,7 +9,6 @@
 - name: install plank
   apt:
     name: plank
-    update_cache: yes
   sudo: yes
 
 - name: install plank - Make sure that the autostart directory exsists
