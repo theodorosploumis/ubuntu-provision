@@ -1,9 +1,8 @@
 ---
 - name: Make sure that the setup directory exsists
   file:
-    path: "/home/{{ username }}/setup"
+    path: "/home/{{ username }}/ubuntu-provision"
     state: directory
     mode: 0755
     owner: "{{ username }}"
     group: "{{ username }}"
-
