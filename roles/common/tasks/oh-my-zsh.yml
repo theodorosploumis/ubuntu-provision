@@ -8,7 +8,7 @@
   git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/{{ username }}/.oh-my-zsh
 
 - name: remove standard zshrc
-  file: path=/home/$user/.zshrc state=absent
+  file: path=/home/{{ username }}/.zshrc state=absent
 
 - name: Symlink my .zshrc from dotfiles
   file:
