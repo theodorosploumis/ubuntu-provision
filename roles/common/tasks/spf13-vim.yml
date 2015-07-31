@@ -2,7 +2,6 @@
 - name: Install vim editor
   apt:
     name: vim
-    update_cache: yes
   sudo: yes
 
 - name: Download spf13-vim script
@@ -23,7 +22,7 @@
 
 - name: Remove ~/.vimrc.local
   command: "rm -f /home/{{ username }}/.vimrc.local"
-  sudo: yeh
+  sudo: yes
 
 - name: Create symlink ~/.vimrc.local
   file:
