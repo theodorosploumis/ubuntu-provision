@@ -23,9 +23,8 @@
     path: "/home/{{ username }}/.{{ dotfile }}"
     with_items:
      - filezilla
-     - config
-     - gconf
-     - profile
+#     - gconf
+#     - profile
      - tmuxinator
     state: link
 
