@@ -17,5 +17,16 @@
 #    - lxc
   sudo: yes
 
+- name: Symlink my own .{{ dotfile }} from dotfiles
+  file:
+    src: "/home/{{ username }}/dotfiles/{{ dotfile }}"
+    path: "/home/{{ username }}/.{{ dotfile }}"
+    with_items:
+     - filezilla
+     - config
+     - gconf
+     - profile
+     - tmuxinator
+    state: link
 
   
