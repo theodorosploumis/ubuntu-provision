@@ -1,6 +1,6 @@
 ---
 - name: Install several utilities and monitoring software
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest  dpkg_options='--no-install-recommends'
   with_items:
     - deja-dup
     - nautilus-open-terminal
@@ -15,6 +15,8 @@
     - gksu
     - leafpad
 #    - lxc
+#    - gv
+#    - texlive-lang-cjk
   sudo: yes
 
 - name: Symlink my own .{{ dotfile }} from dotfiles
